@@ -5,17 +5,17 @@ This repository contains the code and (some of the) data used in the R training 
 
 #### Session 1 (11am - 1pm, December 2, Archaeology 117)
 
-• General intro to R; 
-• descriptive stats;
-• regression;
-• panel data;
-• logit;
-• generating and plotting predicted probabilities.
+- General intro to R;  
+- descriptive stats; 
+- regression; 
+- panel data; 
+- logit;  
+- generating and plotting predicted probabilities.
 
 #### Session 2 (10am -12pm, December 9, Archaeology 117)
 
-• Data wrangling (merging, decoding);
-• Visualisation.
+- Data wrangling (merging, recoding, etc.);    
+- Visualisation.
 
 We would also like to draw your attention again to additional resources in R that we developed this year for Intro to Quant Methods. These are available online and can be found on the GitHub page for the course here:
 
