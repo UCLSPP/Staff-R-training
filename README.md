@@ -1,9 +1,9 @@
 # UCL SPP Staff R training sessions
-## Javier Sajuria (j.sajuria@ucl.ac.uk)
+##### Javier Sajuria (j.sajuria@ucl.ac.uk)
 
 This repository contains the code and (some of the) data used in the R training sessions for the SPP Staff.
 
-## Session 1 (11am - 1pm, December 2, Archaeology 117)
+#### Session 1 (11am - 1pm, December 2, Archaeology 117)
 
 • General intro to R; 
 • descriptive stats;
@@ -12,7 +12,7 @@ This repository contains the code and (some of the) data used in the R training 
 • logit;
 • generating and plotting predicted probabilities.
 
-## Session 2 (10am -12pm, December 9, Archaeology 117)
+#### Session 2 (10am -12pm, December 9, Archaeology 117)
 
 • Data wrangling (merging, decoding);
 • Visualisation.
