@@ -1,12 +1,5 @@
 Week, Show, ShowSolutions, Topic,
-1, TRUE, TRUE, "Introduction to Quantitative Analysis",
-2, TRUE, TRUE, "Descriptive Statistics",
-3, TRUE, TRUE, "T-test for Difference in Means and Hypothesis Testing",
-4, TRUE, TRUE, "Bivariate linear regression models",
-5, TRUE, TRUE, "Multiple linear regression models",
-6, TRUE, TRUE, "Assumptions and Violations of Assumptions",
-7, TRUE, TRUE, "Interactions",
-8, TRUE, FALSE, "Panel Data, Time-Series Cross-Section Models",
-9, FALSE, FALSE, "Binary models: Logit",
-10, FALSE, FALSE, "Review and Repetition",
+1, TRUE, FALSE, "Introduction ro R and statistical models",
+2, TRUE, FALSE, "Data manipulation and Visualisation",
+
 
