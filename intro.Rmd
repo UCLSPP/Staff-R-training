@@ -1,4 +1,4 @@
- UCL SPP Staff R training sessions
+# UCL SPP Staff R training sessions
 ##### Javier Sajuria (j.sajuria@ucl.ac.uk)
 
 This repository contains the code and (some of the) data used in the R training sessions for the SPP Staff.
@@ -24,5 +24,5 @@ https://uclspp.github.io/PUBLG100/
 Additionally the Data Camp training session receives great reviews from people just starting with R:
 
 https://www.datacamp.com/courses/free-introduction-to-r
----
+
 
