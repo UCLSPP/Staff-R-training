@@ -106,9 +106,6 @@ To set up your working directory, you need to use the `setwd()` function. E.g.:
 setwd("~/R seminar")
 ```
 
-```{r, echo=FALSE, message=FALSE}
-setwd("~/Dropbox/UCL/SPP staff R sessions")
-```
 
 One traditional format of data as CSV. These files do not contain any metadata, but they are usually compatible with any statistical software. The way to load a dataset is assigning it to an object (of class `dataframe`). For CSVs, we use `read.csv()`:
 
@@ -272,10 +269,9 @@ screenreg(list(model1, model2, model3))
 
 ## Panel data
 
-We will use the WDI dataset (`wdi.data`). 
-
+We will use the WDI dataset (`wdi.data`).
 ```{r}
-wdi <- read.csv("https://raw.githubusercontent.com/UCLSPP/Staff-R-training/master/Session1/wdi.csv")
+wdi <- read.csv("https://raw.githubusercontent.com/UCLSPP/Staff-R-training/master/Week1/wdi.csv")
 ```
 
 The function used to fit the panel data models is plm, and contains (at least) the following parameters:
