@@ -1,0 +1,1551 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Seminar | UCL SPP Staff R training sessions</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.3.0">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+        <link rel="stylesheet" href="../styles/website.css">
+    
+
+        
+    
+    
+    <link rel="next" href="../optional/index.html" />
+    
+    
+    <link rel="prev" href="../week1/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="1.1" data-basepath=".." data-revision="Mon Nov 30 2015 23:56:42 GMT+0000 (GMT)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="week1/index.html">
+            
+                
+                    <a href="../week1/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Introduction to R, OLS, data manipulation and basic visualisations
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.1" data-path="week1/seminar1.html">
+            
+                
+                    <a href="../week1/seminar1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Seminar
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="optional/index.html">
+            
+                
+                    <a href="../optional/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Optional Material
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="optional/clt.html">
+            
+                
+                    <a href="../optional/clt.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Central Limit Theorem
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="optional/linear_regression.html">
+            
+                
+                    <a href="../optional/linear_regression.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Linear Regression
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="resources.html">
+            
+                
+                    <a href="../resources.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        R Resources
+                    </a>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >UCL SPP Staff R training sessions</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="1-introduction-to-r-ols-data-manipulation-and-basic-visualisations">1. Introduction to R, OLS, data manipulation and basic visualisations</h2>
+<h3 id="1-1-seminar">1.1 Seminar</h3>
+<h1 id="r-training-for-spp-staff-session-1">R training for SPP staff (session 1)</h1>
+<h4 id="javier-sajuria">Javier Sajuria</h4>
+<h4 id="2-december-2015">2 December 2015</h4>
+<h2 id="introduction-to-r">Introduction to R</h2>
+<h3 id="scalar-objects">Scalar objects</h3>
+<pre><code class="lang-r"><span class="hljs-comment"># Create a numeric and a character variable</span>
+a &lt;- <span class="hljs-number">5</span> 
+class(a) <span class="hljs-comment"># a is a numeric variable</span>
+</code></pre>
+<pre><code>[1] &quot;numeric&quot;
+</code></pre><pre><code class="lang-r">a
+</code></pre>
+<pre><code>[1] 5
+</code></pre><pre><code class="lang-r">b &lt;- <span class="hljs-string">&quot;Yay stats class&quot;</span>
+class(b) <span class="hljs-comment"># b is a string variable</span>
+</code></pre>
+<pre><code>[1] &quot;character&quot;
+</code></pre><pre><code class="lang-r">b
+</code></pre>
+<pre><code>[1] &quot;Yay stats class&quot;
+</code></pre><p>Save your script, and re-open it to make sure your changes are still there.</p>
+<h3 id="vectors-and-subsetting">Vectors and subsetting</h3>
+<pre><code class="lang-r"><span class="hljs-comment"># Create a vector</span>
+my.vector &lt;- c(<span class="hljs-number">10</span>,-<span class="hljs-number">7</span>,<span class="hljs-number">99</span>,<span class="hljs-number">34</span>,<span class="hljs-number">0</span>,-<span class="hljs-number">5</span>) <span class="hljs-comment"># a vector</span>
+my.vector
+</code></pre>
+<pre><code>[1] 10 -7 99 34  0 -5
+</code></pre><pre><code class="lang-r">length(my.vector) <span class="hljs-comment"># how many elements?</span>
+</code></pre>
+<pre><code>[1] 6
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># subsetting</span>
+my.vector[<span class="hljs-number">1</span>] <span class="hljs-comment"># 1st vector element</span>
+</code></pre>
+<pre><code>[1] 10
+</code></pre><pre><code class="lang-r">my.vector[-<span class="hljs-number">1</span>] <span class="hljs-comment"># all elements but the 1st</span>
+</code></pre>
+<pre><code>[1] -7 99 34  0 -5
+</code></pre><pre><code class="lang-r">my.vector[<span class="hljs-number">2</span>:<span class="hljs-number">4</span>] <span class="hljs-comment"># the 2nd to the 4th elements</span>
+</code></pre>
+<pre><code>[1] -7 99 34
+</code></pre><pre><code class="lang-r">my.vector[c(<span class="hljs-number">2</span>,<span class="hljs-number">5</span>)] <span class="hljs-comment"># 2nd and 5th element</span>
+</code></pre>
+<pre><code>[1] -7  0
+</code></pre><pre><code class="lang-r">my.vector[length(my.vector)] <span class="hljs-comment"># the last element</span>
+</code></pre>
+<pre><code>[1] -5
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># delete variable &apos;a&apos; from workspace</span>
+rm(a)
+<span class="hljs-comment"># delete everything from workspace</span>
+rm(list=ls())
+</code></pre>
+<h3 id="matrices">Matrices</h3>
+<pre><code class="lang-r"><span class="hljs-comment"># create a matrix</span>
+<span class="hljs-comment"># type help(&quot;matrix&quot;) into the console and press ENTER</span>
+<span class="hljs-comment"># read Description, Usage and Arguments</span>
+my.matrix1 &lt;- matrix(data = c(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">30</span>,<span class="hljs-number">40</span>,<span class="hljs-number">500</span>,<span class="hljs-number">600</span>), nrow = <span class="hljs-number">3</span>, ncol = <span class="hljs-number">2</span>, byrow = <span class="hljs-literal">TRUE</span>,
+                     dimnames = <span class="hljs-literal">NULL</span>)
+my.matrix2 &lt;- matrix(data = c(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">30</span>,<span class="hljs-number">40</span>,<span class="hljs-number">500</span>,<span class="hljs-number">600</span>), nrow = <span class="hljs-number">2</span>, ncol = <span class="hljs-number">3</span>, byrow = <span class="hljs-literal">FALSE</span>)
+<span class="hljs-comment"># How are the matrices different?</span>
+my.matrix1
+</code></pre>
+<pre><code>     [,1] [,2]
+[1,]    1    2
+[2,]   30   40
+[3,]  500  600
+</code></pre><pre><code class="lang-r">my.matrix2
+</code></pre>
+<pre><code>     [,1] [,2] [,3]
+[1,]    1   30  500
+[2,]    2   40  600
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># subsetting a matrix</span>
+my.matrix1[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>] <span class="hljs-comment"># element in row 1 and column 2</span>
+</code></pre>
+<pre><code>[1] 2
+</code></pre><pre><code class="lang-r">my.matrix1[<span class="hljs-number">2</span>,<span class="hljs-number">1</span>] <span class="hljs-comment"># element in row 2 and column 1</span>
+</code></pre>
+<pre><code>[1] 30
+</code></pre><pre><code class="lang-r">my.matrix1[,<span class="hljs-number">1</span>] <span class="hljs-comment"># 1st column only</span>
+</code></pre>
+<pre><code>[1]   1  30 500
+</code></pre><pre><code class="lang-r">my.matrix1[<span class="hljs-number">1</span>:<span class="hljs-number">2</span>,] <span class="hljs-comment"># rows 1 to 2</span>
+</code></pre>
+<pre><code>     [,1] [,2]
+[1,]    1    2
+[2,]   30   40
+</code></pre><pre><code class="lang-r">my.matrix1[c(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>),] <span class="hljs-comment"># rows 1 and 3</span>
+</code></pre>
+<pre><code>     [,1] [,2]
+[1,]    1    2
+[2,]  500  600
+</code></pre><h3 id="installing-and-loading-packages">Installing and loading packages</h3>
+<p>Packages are user-generated pieces of code that expand the basic options of R. R is a very flexible language, that allows to go way beyond the base options.</p>
+<pre><code class="lang-r">install.packages(<span class="hljs-string">&quot;texreg&quot;</span>) <span class="hljs-comment"># Creates tables both in ASCII text, LaTeX or Word, similar to outreg</span>
+install.packages(<span class="hljs-string">&quot;lmtest&quot;</span>) <span class="hljs-comment"># Provides different tests of linear models</span>
+install.packages(<span class="hljs-string">&quot;readxl&quot;</span>) <span class="hljs-comment"># Opens and writes Excel files</span>
+install.packages(<span class="hljs-string">&quot;sandwich&quot;</span>) <span class="hljs-comment"># Calculates heteroskedasticity consistent SEs</span>
+install.packages(<span class="hljs-string">&quot;car&quot;</span>) <span class="hljs-comment"># General functions to run regressions and manage data</span>
+install.packages(<span class="hljs-string">&quot;plm&quot;</span>) <span class="hljs-comment"># Panel data models</span>
+install.packages(<span class="hljs-string">&quot;dplyr&quot;</span>) <span class="hljs-comment"># General data manipulation</span>
+install.packages(<span class="hljs-string">&quot;tidyr&quot;</span>) <span class="hljs-comment"># Further data manipulations</span>
+install.packages(<span class="hljs-string">&quot;ggplot2&quot;</span>) <span class="hljs-comment"># Advanced graphical machine</span>
+install.packages(<span class="hljs-string">&quot;effects&quot;</span>)
+</code></pre>
+<p>In some cases, we want to install previous versions of packages. In this case, we will install Zelig, a comprehensive package that we will use to estimate and plot predicted probabilities. We will install the same version we are using to teach the MSc students:</p>
+<pre><code class="lang-r">install.packages(<span class="hljs-string">&quot;https://cran.r-project.org/src/contrib/Archive/Zelig/Zelig_4.2-1.tar.gz&quot;</span>, 
+                 repos=<span class="hljs-literal">NULL</span>, 
+                 type=<span class="hljs-string">&quot;source&quot;</span>)
+</code></pre>
+<p>Once packages are installed, they need to be loaded. The reason is that some packages have overlapping functions with others, so we usually care about the order in which we load them</p>
+<pre><code class="lang-r"><span class="hljs-keyword">library</span>(foreign) <span class="hljs-comment">## comes with the basic installation and allows us to open files in other formats such as Stata, SPSS or SAS</span>
+<span class="hljs-keyword">library</span>(car)
+<span class="hljs-keyword">library</span>(readxl) 
+<span class="hljs-keyword">library</span>(texreg)
+</code></pre>
+<pre><code>Version:  1.35
+Date:     2015-04-25
+Author:   Philip Leifeld (University of Konstanz)
+
+Please cite the JSS article in your publications -- see citation(&quot;texreg&quot;).
+</code></pre><pre><code class="lang-r"><span class="hljs-keyword">library</span>(Zelig)
+</code></pre>
+<pre><code>Loading required package: boot
+
+Attaching package: &apos;boot&apos;
+
+The following object is masked from &apos;package:car&apos;:
+
+    logit
+
+Loading required package: MASS
+Loading required package: sandwich
+ZELIG (Versions 4.2-1, built: 2013-09-12)
+
++----------------------------------------------------------------+
+|  Please refer to http://gking.harvard.edu/zelig for full       |
+|  documentation or help.zelig() for help with commands and      |
+|  models support by Zelig.                                      |
+|                                                                |
+|  Zelig project citations:                                      |
+|    Kosuke Imai, Gary King, and Olivia Lau.  (2009).            |
+|    ``Zelig: Everyone&apos;s Statistical Software,&apos;&apos;                 |
+|    http://gking.harvard.edu/zelig                              |
+|   and                                                          |
+|    Kosuke Imai, Gary King, and Olivia Lau. (2008).             |
+|    ``Toward A Common Framework for Statistical Analysis        |
+|    and Development,&apos;&apos; Journal of Computational and             |
+|    Graphical Statistics, Vol. 17, No. 4 (December)             |
+|    pp. 892-913.                                                |
+|                                                                |
+|   To cite individual Zelig models, please use the citation     |
+|   format printed with each model run and in the documentation. |
++----------------------------------------------------------------+
+
+
+
+Attaching package: &apos;Zelig&apos;
+
+The following object is masked from &apos;package:utils&apos;:
+
+    cite
+</code></pre><pre><code class="lang-r"><span class="hljs-keyword">library</span>(sandwich)
+<span class="hljs-keyword">library</span>(plm)
+</code></pre>
+<pre><code>Loading required package: Formula
+</code></pre><pre><code class="lang-r"><span class="hljs-keyword">library</span>(effects)
+</code></pre>
+<pre><code>Attaching package: &apos;effects&apos;
+
+The following object is masked from &apos;package:car&apos;:
+
+    Prestige
+</code></pre><pre><code class="lang-r"><span class="hljs-keyword">library</span>(ggplot2)
+<span class="hljs-keyword">library</span>(tidyr)
+</code></pre>
+<pre><code>Attaching package: &apos;tidyr&apos;
+
+The following object is masked from &apos;package:texreg&apos;:
+
+    extract
+</code></pre><pre><code class="lang-r"><span class="hljs-keyword">library</span>(lmtest)
+</code></pre>
+<pre><code>Loading required package: zoo
+
+Attaching package: &apos;zoo&apos;
+
+The following objects are masked from &apos;package:base&apos;:
+
+    as.Date, as.Date.numeric
+</code></pre><pre><code class="lang-r"><span class="hljs-keyword">library</span>(dplyr)
+</code></pre>
+<pre><code>Attaching package: &apos;dplyr&apos;
+
+The following object is masked from &apos;package:plm&apos;:
+
+    between
+
+The following objects are masked from &apos;package:Zelig&apos;:
+
+    combine, summarize
+
+The following object is masked from &apos;package:MASS&apos;:
+
+    select
+
+The following objects are masked from &apos;package:stats&apos;:
+
+    filter, lag
+
+The following objects are masked from &apos;package:base&apos;:
+
+    intersect, setdiff, setequal, union
+</code></pre><p>To set up your working directory, you need to use the <code>setwd()</code> function. E.g.:</p>
+<pre><code>setwd(&quot;~/R seminar&quot;)
+</code></pre><h2 id="downloading-data-and-descriptive-stats">Downloading data and descriptive stats</h2>
+<p>One traditional format of data as CSV. These files do not contain any metadata, but they are usually compatible with any statistical software. The way to load a dataset is assigning it to an object (of class <code>dataframe</code>). For CSVs, we use <code>read.csv()</code>:</p>
+<pre><code class="lang-r"><span class="hljs-comment"># load the Polity IV dataset</span>
+my.data &lt;- read.csv(<span class="hljs-string">&quot;http://uclspp.github.io/PUBLG100/data/polity.csv&quot;</span>)
+
+<span class="hljs-comment"># View(my.data) # opens a window with the data set</span>
+head(my.data) <span class="hljs-comment"># retrieves the first 6 observations</span>
+</code></pre>
+<pre><code>  id scode                          country year polity2 democ nato
+1  1   AFG Afghanistan                      1800      -6     1    0
+2  2   AFG Afghanistan                      1801      -6     1    0
+3  3   AFG Afghanistan                      1802      -6     1    0
+4  4   AFG Afghanistan                      1803      -6     1    0
+5  5   AFG Afghanistan                      1804      -6     1    0
+6  6   AFG Afghanistan                      1805      -6     1    0
+</code></pre><pre><code class="lang-r">head(my.data, n=<span class="hljs-number">10</span>) <span class="hljs-comment"># you can manually set up the amount of observations shown</span>
+</code></pre>
+<pre><code>   id scode                          country year polity2 democ nato
+1   1   AFG Afghanistan                      1800      -6     1    0
+2   2   AFG Afghanistan                      1801      -6     1    0
+3   3   AFG Afghanistan                      1802      -6     1    0
+4   4   AFG Afghanistan                      1803      -6     1    0
+5   5   AFG Afghanistan                      1804      -6     1    0
+6   6   AFG Afghanistan                      1805      -6     1    0
+7   7   AFG Afghanistan                      1806      -6     1    0
+8   8   AFG Afghanistan                      1807      -6     1    0
+9   9   AFG Afghanistan                      1808      -6     1    0
+10 10   AFG Afghanistan                      1809      -6     1    0
+</code></pre><pre><code class="lang-r">tail(my.data) <span class="hljs-comment"># retrieves the last 6 observations</span>
+</code></pre>
+<pre><code>         id scode                          country year polity2 democ nato
+16889 16889   ZIM Zimbabwe                         2009       1     3    0
+16890 16890   ZIM Zimbabwe                         2010       1     3    0
+16891 16891   ZIM Zimbabwe                         2011       1     3    0
+16892 16892   ZIM Zimbabwe                         2012       1     3    0
+16893 16893   ZIM Zimbabwe                         2013       4     5    0
+16894 16894   ZIM Zimbabwe                         2014       4     5    0
+</code></pre><pre><code class="lang-r">levels(my.data$country) <span class="hljs-comment"># levels displays levels of a factor variable</span>
+</code></pre>
+<pre><code>  [1] &quot;Afghanistan                     &quot; &quot;Albania                         &quot;
+  [3] &quot;Algeria                         &quot; &quot;Angola                          &quot;
+  [5] &quot;Argentina                       &quot; &quot;Armenia                         &quot;
+  [7] &quot;Australia                       &quot; &quot;Austria                         &quot;
+  [9] &quot;Azerbaijan                      &quot; &quot;Baden                           &quot;
+ [11] &quot;Bahrain                         &quot; &quot;Bangladesh                      &quot;
+ [13] &quot;Bavaria                         &quot; &quot;Belarus                         &quot;
+ [15] &quot;Belgium                         &quot; &quot;Benin                           &quot;
+ [17] &quot;Bhutan                          &quot; &quot;Bolivia                         &quot;
+ [19] &quot;Bosnia                          &quot; &quot;Botswana                        &quot;
+ [21] &quot;Brazil                          &quot; &quot;Bulgaria                        &quot;
+ [23] &quot;Burkina Faso                    &quot; &quot;Burundi                         &quot;
+ [25] &quot;Cambodia                        &quot; &quot;Cameroon                        &quot;
+ [27] &quot;Canada                          &quot; &quot;Cape Verde                      &quot;
+ [29] &quot;Central African Republic        &quot; &quot;Chad                            &quot;
+ [31] &quot;Chile                           &quot; &quot;China                           &quot;
+ [33] &quot;Colombia                        &quot; &quot;Comoros                         &quot;
+ [35] &quot;Congo Brazzaville               &quot; &quot;Congo Kinshasa                  &quot;
+ [37] &quot;Costa Rica                      &quot; &quot;Croatia                         &quot;
+ [39] &quot;Cuba                            &quot; &quot;Cyprus                          &quot;
+ [41] &quot;Czech Republic                  &quot; &quot;Czechoslovakia                  &quot;
+ [43] &quot;Denmark                         &quot; &quot;Djibouti                        &quot;
+ [45] &quot;Dominican Republic              &quot; &quot;East Timor                      &quot;
+ [47] &quot;Ecuador                         &quot; &quot;Egypt                           &quot;
+ [49] &quot;El Salvador                     &quot; &quot;Equatorial Guinea               &quot;
+ [51] &quot;Eritrea                         &quot; &quot;Estonia                         &quot;
+ [53] &quot;Ethiopia                        &quot; &quot;Fiji                            &quot;
+ [55] &quot;Finland                         &quot; &quot;France                          &quot;
+ [57] &quot;Gabon                           &quot; &quot;Gambia                          &quot;
+ [59] &quot;Georgia                         &quot; &quot;Germany                         &quot;
+ [61] &quot;Germany East                    &quot; &quot;Germany West                    &quot;
+ [63] &quot;Ghana                           &quot; &quot;Gran Colombia                   &quot;
+ [65] &quot;Greece                          &quot; &quot;Guatemala                       &quot;
+ [67] &quot;Guinea                          &quot; &quot;Guinea-Bissau                   &quot;
+ [69] &quot;Guyana                          &quot; &quot;Haiti                           &quot;
+ [71] &quot;Honduras                        &quot; &quot;Hungary                         &quot;
+ [73] &quot;India                           &quot; &quot;Indonesia                       &quot;
+ [75] &quot;Iran                            &quot; &quot;Iraq                            &quot;
+ [77] &quot;Ireland                         &quot; &quot;Israel                          &quot;
+ [79] &quot;Italy                           &quot; &quot;Ivory Coast                     &quot;
+ [81] &quot;Jamaica                         &quot; &quot;Japan                           &quot;
+ [83] &quot;Jordan                          &quot; &quot;Kazakhstan                      &quot;
+ [85] &quot;Kenya                           &quot; &quot;Korea                           &quot;
+ [87] &quot;Korea North                     &quot; &quot;Korea South                     &quot;
+ [89] &quot;Kosovo                          &quot; &quot;Kuwait                          &quot;
+ [91] &quot;Kyrgyzstan                      &quot; &quot;Laos                            &quot;
+ [93] &quot;Latvia                          &quot; &quot;Lebanon                         &quot;
+ [95] &quot;Lesotho                         &quot; &quot;Liberia                         &quot;
+ [97] &quot;Libya                           &quot; &quot;Lithuania                       &quot;
+ [99] &quot;Luxembourg                      &quot; &quot;Macedonia                       &quot;
+[101] &quot;Madagascar                      &quot; &quot;Malawi                          &quot;
+[103] &quot;Malaysia                        &quot; &quot;Mali                            &quot;
+[105] &quot;Mauritania                      &quot; &quot;Mauritius                       &quot;
+[107] &quot;Mexico                          &quot; &quot;Modena                          &quot;
+[109] &quot;Moldova                         &quot; &quot;Mongolia                        &quot;
+[111] &quot;Montenegro                      &quot; &quot;Morocco                         &quot;
+[113] &quot;Mozambique                      &quot; &quot;Myanmar (Burma)                 &quot;
+[115] &quot;Namibia                         &quot; &quot;Nepal                           &quot;
+[117] &quot;Netherlands                     &quot; &quot;New Zealand                     &quot;
+[119] &quot;Nicaragua                       &quot; &quot;Niger                           &quot;
+[121] &quot;Nigeria                         &quot; &quot;Norway                          &quot;
+[123] &quot;Oman                            &quot; &quot;Orange Free State               &quot;
+[125] &quot;Pakistan                        &quot; &quot;Panama                          &quot;
+[127] &quot;Papal States                    &quot; &quot;Papua New Guinea                &quot;
+[129] &quot;Paraguay                        &quot; &quot;Parma                           &quot;
+[131] &quot;Peru                            &quot; &quot;Philippines                     &quot;
+[133] &quot;Poland                          &quot; &quot;Portugal                        &quot;
+[135] &quot;Prussia                         &quot; &quot;Qatar                           &quot;
+[137] &quot;Romania                         &quot; &quot;Russia                          &quot;
+[139] &quot;Rwanda                          &quot; &quot;Sardinia                        &quot;
+[141] &quot;Saudi Arabia                    &quot; &quot;Saxony                          &quot;
+[143] &quot;Senegal                         &quot; &quot;Serbia                          &quot;
+[145] &quot;Serbia and Montenegro           &quot; &quot;Sierra Leone                    &quot;
+[147] &quot;Singapore                       &quot; &quot;Slovak Republic                 &quot;
+[149] &quot;Slovenia                        &quot; &quot;Solomon Islands                 &quot;
+[151] &quot;Somalia                         &quot; &quot;South Africa                    &quot;
+[153] &quot;South Sudan                     &quot; &quot;Spain                           &quot;
+[155] &quot;Sri Lanka                       &quot; &quot;Sudan                           &quot;
+[157] &quot;Sudan-North                     &quot; &quot;Suriname                        &quot;
+[159] &quot;Swaziland                       &quot; &quot;Sweden                          &quot;
+[161] &quot;Switzerland                     &quot; &quot;Syria                           &quot;
+[163] &quot;Taiwan                          &quot; &quot;Tajikistan                      &quot;
+[165] &quot;Tanzania                        &quot; &quot;Thailand                        &quot;
+[167] &quot;Togo                            &quot; &quot;Trinidad and Tobago             &quot;
+[169] &quot;Tunisia                         &quot; &quot;Turkey                          &quot;
+[171] &quot;Turkmenistan                    &quot; &quot;Tuscany                         &quot;
+[173] &quot;Two Sicilies                    &quot; &quot;UAE                             &quot;
+[175] &quot;Uganda                          &quot; &quot;Ukraine                         &quot;
+[177] &quot;United Kingdom                  &quot; &quot;United Province CA              &quot;
+[179] &quot;United States                   &quot; &quot;Uruguay                         &quot;
+[181] &quot;USSR                            &quot; &quot;Uzbekistan                      &quot;
+[183] &quot;Venezuela                       &quot; &quot;Vietnam                         &quot;
+[185] &quot;Vietnam North                   &quot; &quot;Vietnam South                   &quot;
+[187] &quot;Wuerttemburg                    &quot; &quot;Yemen                           &quot;
+[189] &quot;Yemen North                     &quot; &quot;Yemen South                     &quot;
+[191] &quot;Yugoslavia                      &quot; &quot;Zambia                          &quot;
+[193] &quot;Zimbabwe                        &quot;
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># we drop all oberservations which are not from 1946</span>
+my.data &lt;- my.data[my.data$year==<span class="hljs-number">1946</span>,]
+head(my.data)
+</code></pre>
+<pre><code>       id scode                          country year polity2 democ nato
+147   147   AFG Afghanistan                      1946     -10     0    0
+248   248   ALB Albania                          1946      -9     0    0
+531   531   ARG Argentina                        1946      -8   -88    0
+669   669   AUL Australia                        1946      10    10    0
+884   884   AUS Austria                          1946      10    10    0
+1262 1262   BEL Belgium                          1946      10    10    1
+</code></pre><pre><code class="lang-r">summary(my.data$polity2) <span class="hljs-comment"># descriptive statistics of polity variable</span>
+</code></pre>
+<pre><code>    Min.  1st Qu.   Median     Mean  3rd Qu.     Max.     NA&apos;s 
+-10.0000  -7.0000  -1.0000   0.2319   8.0000  10.0000        3 
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># now lets check if western countries were more democratic than the other countries in 1946</span>
+table(my.data$nato, my.data$polity2)
+</code></pre>
+<pre><code>    -10 -9 -8 -7 -6 -5 -4 -3 -1 0 1 2 3 4 5 7 8 10
+  0   4  7  3  3  4  3  2  5  3 1 1 5 1 1 3 2 2  8
+  1   0  1  0  0  0  0  0  0  0 0 0 0 0 0 1 0 0  9
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># descriptive summary stats of polity variable by nato membership </span>
+summary(my.data$polity2[my.data$nato==<span class="hljs-number">0</span>]) <span class="hljs-comment"># not in nato</span>
+</code></pre>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&apos;s 
+-10.000  -7.000  -3.000  -1.207   4.750  10.000       3 
+</code></pre><pre><code class="lang-r">summary(my.data$polity2[my.data$nato==<span class="hljs-number">1</span>]) <span class="hljs-comment"># nato member</span>
+</code></pre>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ -9.000  10.000  10.000   7.818  10.000  10.000 
+</code></pre><pre><code class="lang-r"><span class="hljs-comment">## illustration</span>
+boxplot(my.data$polity2 ~ as.factor(my.data$nato),
+        frame = <span class="hljs-literal">FALSE</span>,
+        main = <span class="hljs-string">&quot;Polity IV Scores of NATO founders vs others in 1946&quot;</span>,
+        xlab = <span class="hljs-string">&quot;NATO member&quot;</span>,
+        ylab = <span class="hljs-string">&quot;Polity Score&quot;</span>)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-7-1.png" alt=""></p>
+<p>We can use the <code>read_excel</code> function from the <code>readxl</code> package to open Excel files. However, unlike with what we did for CSV files, the <code>read_excel</code> function does not directly download files, so we need to save them into our working directory.</p>
+<p><a href="http://uclspp.github.io/PUBLG100/data/hsb2.xlsx" type="button" class="btn btn-success" target="_blank">Download &apos;High School and Beyond&apos; Dataset</a></p>
+<p>Make sure you save it into your working directory and then run:</p>
+<pre><code class="lang-r">student_data &lt;- read_excel(<span class="hljs-string">&quot;hsb2.xlsx&quot;</span>)
+
+head(student_data)
+</code></pre>
+<pre><code>Source: local data frame [6 x 11]
+
+   id female race ses schtyp prog read write math science socst
+1  70      0    4   1      1    1   57    52   41      47    57
+2 121      1    4   2      1    3   68    59   53      63    61
+3  86      0    4   3      1    1   44    33   54      58    31
+4 141      0    4   3      1    3   63    44   47      53    56
+5 172      0    4   2      1    2   47    52   57      53    61
+6 113      0    4   2      1    2   44    52   51      63    61
+</code></pre><p>To open Stata files, we can use the <code>read.dta()</code> function:</p>
+<pre><code class="lang-r">world.data &lt;- read.dta(<span class="hljs-string">&quot;http://uclspp.github.io/PUBLG100/data/QoG2012.dta&quot;</span>)
+head(world.data)
+</code></pre>
+<pre><code>  h_j   wdi_gdpc undp_hdi   wbgi_cce   wbgi_pse former_col lp_lat_abst
+1  -5   628.4074       NA -1.5453584 -1.9343837          0   0.3666667
+2  -5  4954.1982    0.781 -0.8538115 -0.6026081          0   0.4555556
+3  -5  6349.7207    0.704 -0.7301510 -1.7336243          1   0.3111111
+4  NA         NA       NA  1.3267342  1.1980436          0   0.4700000
+5  -5  2856.7517    0.381 -1.2065741 -1.4150945          1   0.1366667
+6  NA 13981.9795    0.800  0.8624368  0.7084046          1   0.1892222
+</code></pre><p>We will start looking at the <code>student_data</code> dataset:</p>
+<pre><code class="lang-r">mean(student_data$science) <span class="hljs-comment"># Mean</span>
+</code></pre>
+<pre><code>[1] 51.865
+</code></pre><pre><code class="lang-r">sd(student_data$science) <span class="hljs-comment"># Standard deviation</span>
+</code></pre>
+<pre><code>[1] 9.936824
+</code></pre><pre><code class="lang-r">sd(student_data$science)^<span class="hljs-number">2</span> <span class="hljs-comment"># Variance</span>
+</code></pre>
+<pre><code>[1] 98.74048
+</code></pre><pre><code class="lang-r">median(student_data$science) <span class="hljs-comment"># Median</span>
+</code></pre>
+<pre><code>[1] 53
+</code></pre><pre><code class="lang-r">range(student_data$science) <span class="hljs-comment"># Minimum and Maximum value</span>
+</code></pre>
+<pre><code>[1] 26 77
+</code></pre><pre><code class="lang-r">summary(student_data$science)
+</code></pre>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  26.00   44.00   53.00   51.86   58.00   77.00 
+</code></pre><pre><code class="lang-r">hist(student_data$science, main = <span class="hljs-string">&quot;Histogram of Science Scores&quot;</span>, xlab = <span class="hljs-string">&quot;Science Score&quot;</span>)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-10-1.png" alt=""></p>
+<p>Now let&apos;s suppose we wanted to find out the highest score in science and also wanted to see the ID of the student who received the highest score.</p>
+<p>The <a href="http://bit.ly/R_extremes" target="_blank"><code>max()</code></a> function tells us the highest score, and <a href="http://bit.ly/R_which_min" target="_blank"><code>which.max()</code></a> tells us the row number of the student who received it.</p>
+<pre><code class="lang-r">max(student_data$science)
+</code></pre>
+<pre><code>[1] 77
+</code></pre><pre><code class="lang-r">which.max(student_data$science)
+</code></pre>
+<pre><code>[1] 74
+</code></pre><p>In addition to the median, the 25th percentile (also known as the lower quartile) and 75th percentile (or the upper quartile) are commonly used to describe the distribution of values in a number of fields including standardized test scores, income and wealth statistics and healthcare measurements such as a baby&apos;s birth weight or a child&apos;s height compared to their respective peer group.</p>
+<p>We can calculate percentiles using the <a href="http://bit.ly/R_quantile" target="_blank"><code>quantile()</code></a> function in R. For example, if we wanted to see the science scores in the 25th, 50th and 75th percentiles, we would call the <a href="http://bit.ly/R_quantile" target="_blank"><code>quantile()</code></a> function with <code>c(0.25, 0.5, 0.75)</code> as the second argument.</p>
+<pre><code class="lang-r">quantile(student_data$science, c(<span class="hljs-number">0.25</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">0.75</span>))
+</code></pre>
+<pre><code>25% 50% 75% 
+ 44  53  58 
+</code></pre><p>Obtaining the mode is slightly more difficult, but it takes only a couple of extra steps. We will use a categorical variable, such as <code>race</code> from the <code>student_data</code> file.</p>
+<h4 id="factor-variables">Factor Variables</h4>
+<p>The High School and Beyond dataset that we&apos;ve been using contains categorical variable such as race, gender and socioeconomic status that are coded as numeric data and must be converted to factor variables.</p>
+<p>We&apos;ll use the following code book to create categorical variables for gender, race, and socioeconomic status.</p>
+<table>
+<thead>
+<tr>
+<th>Categorical Variable</th>
+<th>New Factor Variable</th>
+<th>Levels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>female</td>
+<td>gender</td>
+<td>0 - Male <br> 1 - Female</td>
+</tr>
+<tr>
+<td>ses</td>
+<td>socioeconomic_status</td>
+<td>1 - Low <br> 2 - Middle <br> 3 - High</td>
+</tr>
+<tr>
+<td>race</td>
+<td>racial_group</td>
+<td>1 - Black <br> 2- Asian <br> 3 - Hispanic <br> 4 - White</td>
+</tr>
+</tbody>
+</table>
+<p>We can convert categorical variables to factor variables using the <a href="http://bit.ly/R_factor" target="_blank"><code>factor()</code></a> function. The <a href="http://bit.ly/R_factor" target="_blank"><code>factor()</code></a> function needs the categorical variable and the distinct labels for each category (such as &quot;Male&quot;, &quot;Female&quot;) as the two arguments for creating factor variables.</p>
+<pre><code class="lang-r">student_data$sex &lt;- factor(student_data$female, labels = c(<span class="hljs-string">&quot;Male&quot;</span>, <span class="hljs-string">&quot;Female&quot;</span>)) 
+student_data$socioeconomic_status &lt;- factor(student_data$ses, labels = c(<span class="hljs-string">&quot;Low&quot;</span>, <span class="hljs-string">&quot;Middle&quot;</span>, <span class="hljs-string">&quot;High&quot;</span>)) 
+student_data$racial_group &lt;- factor(student_data$race, labels = c(<span class="hljs-string">&quot;Black&quot;</span>, <span class="hljs-string">&quot;Asian&quot;</span>, <span class="hljs-string">&quot;Hispanic&quot;</span>, <span class="hljs-string">&quot;White&quot;</span>))
+</code></pre>
+<p>Based on this, let&apos;s get the mode</p>
+<pre><code class="lang-r">race_table &lt;- table(student_data$racial_group) <span class="hljs-comment"># This tabulates the frequency per value</span>
+race_table
+</code></pre>
+<pre><code>   Black    Asian Hispanic    White 
+      24       11       20      145 
+</code></pre><pre><code class="lang-r">sort(race_table, decreasing = <span class="hljs-literal">TRUE</span>)
+</code></pre>
+<pre><code>   White    Black Hispanic    Asian 
+     145       24       20       11 
+</code></pre><p>Now that we&apos;ve created factor variables for our categorical data, we can run crosstabs on these newly created factor variables . We know that our dataset has 200 observations, but let&apos;s see how many are male students and how many are female students.</p>
+<pre><code class="lang-r">table(student_data$sex)
+</code></pre>
+<pre><code>  Male Female 
+    91    109 
+</code></pre><p>Next, let&apos;s see how the different socioeconomic groups (Low, Middle, High) are represented in our dataset.</p>
+<pre><code class="lang-r">table(student_data$socioeconomic_status)
+</code></pre>
+<pre><code>   Low Middle   High 
+    47     95     58 
+</code></pre><p>Finally, we can run two-way crosstabs to see how the different racial groups are distributed over the three socioeconomic levels.</p>
+<pre><code class="lang-r">table(student_data$socioeconomic_status, student_data$racial_group)
+</code></pre>
+<pre><code>         Black Asian Hispanic White
+  Low        9     3       11    24
+  Middle    11     5        6    73
+  High       4     3        3    48
+</code></pre><h3 id="visualizing-data">Visualizing Data</h3>
+<p>Let&apos;s move on to some visualizations starting with a bar chart of socioeconomic status and let&apos;s take advantage of the factor variable we created above. Since <code>socioeconomic_status</code> is a factor variable, R automatically knows how to draw bars for each factor and label them accordingly.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># bar charts</span>
+barplot(table(student_data$socioeconomic_status))
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-18-1.png" alt=""></p>
+<p>In addition to being able to correctly group and label a bar chart with distinct categories, factor variables can also be used to create box plots automatically with the <a href="http://bit.ly/R_plot" target="_blank"><code>plot()</code></a> function. The <a href="http://bit.ly/R_plot" target="_blank"><code>plot()</code></a> function understands that we are interested in a box plot when we pass it a factor variable for the x-axis.</p>
+<p>We can use the <a href="http://bit.ly/R_par" target="_blank"><code>par()</code></a> function to change graphical parameters and instruct R to create a figure with 1 row and 3 columns using the <code>mfrow=c(1,3)</code> option. Once the graphical parameters are set, the three plots for gender, race and socioeconomic status variables will be created side-by-side in a single figure.</p>
+<p>We would like to rotate the x-axis labels 90 degrees so that they are perpendicular to the axis. Most graphics functions in R support a label style <code>las</code> option for rotating axis labels. The <code>las</code> option can take these 4 values:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Axis Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Always parallel to the axis [default]</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Always horizontal</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Always perpendicular to the axis</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Always vertical</td>
+</tr>
+</tbody>
+</table>
+<p>To rorate the axis labels 90 degrees, we&apos;ll use <code>las = 2</code> when calling the <a href="http://bit.ly/R_plot" target="_blank"><code>plot()</code></a> function.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># science score by gender, race and socioeconomic status</span>
+par(mfrow=c(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>))
+
+<span class="hljs-comment"># categorical variables are plotted as boxplots</span>
+plot(student_data$sex, student_data$science, main = <span class="hljs-string">&quot;Gender&quot;</span>, las = <span class="hljs-number">2</span>)
+plot(student_data$racial_group, student_data$science, main = <span class="hljs-string">&quot;Race&quot;</span>, las = <span class="hljs-number">2</span>)
+plot(student_data$socioeconomic_status, student_data$science, main = <span class="hljs-string">&quot;Socioeconomic Status&quot;</span>, las = <span class="hljs-number">2</span>)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-19-1.png" alt=""></p>
+<p>Now let&apos;s see if we can visually examine the relationship between science and math scores using a scatter plot. Before we call the <a href="http://bit.ly/R_plot" target="_blank"><code>plot()</code></a> function we need to reset the graphical parameters to make sure that our figure only contains a single plot by calling the <a href="http://bit.ly/R_par" target="_blank"><code>par()</code></a> function and using the <code>mfrow=c(1,1)</code> option.</p>
+<pre><code class="lang-r">par(mfrow=c(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>))
+plot(student_data$math, student_data$science)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-20-1.png" alt=""></p>
+<h3 id="the-apply-function">The <code>apply()</code> Function</h3>
+<p>Suppose we wanted to create a new variable called <code>english</code> which represented the average of each student&apos;s reading and writing scores. We could call the <a href="http://bit.ly/R_mean" target="_blank"><code>mean()</code></a> function manually for each student and update the <code>english</code> variable but that would be inefficient and extremely time consuming. Fortunately, R provide us built-in support for tasks like this with the <a href="http://bit.ly/R_apply" target="_blank"><code>apply()</code></a> function. The appropriately named <a href="http://bit.ly/R_apply" target="_blank"><code>apply()</code></a> function allows us to &apos;apply&apos; any function to either the rows or the columns of a matrix or a data frame in a single call.</p>
+<p>Here is a list of arguments the <a href="http://bit.ly/R_apply" target="_blank"><code>apply()</code></a> function expects and their descriptions:</p>
+<pre><code>apply(x, margin, function)
+</code></pre><table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td>The first argument is the dataset that we want the apply function to operate on. Since we&apos;re averaging over reading and writing scores, we select only the <code>read</code> and <code>write</code> columns.</td>
+</tr>
+<tr>
+<td><code>margin</code></td>
+<td>The second argument tells <a href="http://bit.ly/R_apply" target="_blank"><code>apply()</code></a> to either apply the function row-by-row (1) or column-by-column (2). We need to apply the mean function to each row by specifying the second argument as <code>1</code>.</td>
+</tr>
+<tr>
+<td><code>function</code></td>
+<td>The third argument is simply the function to be applied to each row, or <code>mean</code> in our case.</td>
+</tr>
+</tbody>
+</table>
+<p>Let&apos;s take a look at <a href="http://bit.ly/R_apply" target="_blank"><code>apply()</code></a> in action:</p>
+<pre><code class="lang-r">student_data$english &lt;- apply(student_data[c(<span class="hljs-string">&quot;read&quot;</span>, <span class="hljs-string">&quot;write&quot;</span>)], <span class="hljs-number">1</span>, mean)
+</code></pre>
+<p>Let&apos;s use <a href="http://bit.ly/R_head" target="_blank"><code>head()</code></a> to inspect our dataset with the english scores.</p>
+<pre><code class="lang-r">head(student_data)
+</code></pre>
+<pre><code>Source: local data frame [6 x 15]
+
+   id female race ses schtyp prog read write math science socst    sex
+1  70      0    4   1      1    1   57    52   41      47    57   Male
+2 121      1    4   2      1    3   68    59   53      63    61 Female
+3  86      0    4   3      1    1   44    33   54      58    31   Male
+4 141      0    4   3      1    3   63    44   47      53    56   Male
+5 172      0    4   2      1    2   47    52   57      53    61   Male
+6 113      0    4   2      1    2   44    52   51      63    61   Male
+Variables not shown: socioeconomic_status (fctr), racial_group (fctr),
+  english (dbl)
+</code></pre><h3 id="distributions-in-r">Distributions in R</h3>
+<p>One of the default packages in R called <code>stats</code> provides a number of functions for drawing random samples from a distribution.</p>
+<p>The <a href="https://bit.ly/R_normal" target="_blank"><code>rnorm()</code></a> function, for example, can be used to draw from a normal distribution.</p>
+<pre><code class="lang-r">normal_dist &lt;- rnorm(<span class="hljs-number">1000</span>, mean = <span class="hljs-number">0</span>, sd = <span class="hljs-number">1</span>)
+head(normal_dist)
+</code></pre>
+<pre><code>[1] -1.6149516  0.7550053 -1.2067655  1.0701133  0.1216741  1.9004983
+</code></pre><pre><code class="lang-r">hist(normal_dist)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-23-1.png" alt=""></p>
+<p>The <a href="http://bit.ly/R_uniform" target="_blank"><code>runif()</code></a> function can be used to draw from a uniform distribution. For example, we can simulate rolling a 6-sided die with the following code.</p>
+<pre><code class="lang-r">num_rolls &lt;- <span class="hljs-number">10</span> <span class="hljs-comment"># number of times to roll the dice</span>
+rolls &lt;- as.integer(runif(num_rolls, min = <span class="hljs-number">1</span>, max = <span class="hljs-number">7</span>))
+rolls
+</code></pre>
+<pre><code> [1] 4 1 5 4 1 2 1 3 1 1
+</code></pre><h2 id="regression">Regression</h2>
+<p>The basic function for fitting linear models is <code>lm()</code>. It is always recommended to create an object with the results from the <code>lm()</code> function and then summarise it. The way in which it works is:</p>
+<pre><code>model1 &lt;- lm(DV ~ IV1 + IV2, data)
+summarise(model1)
+</code></pre><p>The arguments are:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Formula</td>
+<td><code>DV ~ IV</code></td>
+</tr>
+<tr>
+<td>data</td>
+<td>The dataset where the variables are contained</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fitting-the-model-and-displaying-results">Fitting the model and displaying results</h3>
+<pre><code class="lang-r"><span class="hljs-comment"># load the communities datasets</span>
+communities &lt;- read.csv(<span class="hljs-string">&quot;http://uclspp.github.io/PUBLG100/data/communities.csv&quot;</span>)
+communities_employment &lt;- read.csv(<span class="hljs-string">&quot;http://uclspp.github.io/PUBLG100/data/communities_employment.csv&quot;</span>)
+</code></pre>
+<p>It seems that <code>state</code> and <code>communityname</code> are common to both datasets so we can use them to do the merge.</p>
+<p>Now let&apos;s use the <a href="http://bit.ly/R_merge" target="_blank"><code>merge()</code></a> function to merge these two datasets together. There are three arguments that we need to provide to the <a href="http://bit.ly/R_merge" target="_blank"><code>merge()</code></a> function so it knows what we are trying to merge and how.</p>
+<pre><code>merge(x, y, by)
+</code></pre><table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td>The first dataset to merge. This is the <code>communities</code> dataset in our case.</td>
+</tr>
+<tr>
+<td><code>y</code></td>
+<td>The second dataset to merge. This is the <code>communities_employment</code> dataset.</td>
+</tr>
+<tr>
+<td><code>by</code></td>
+<td>Name of the column or columns that are common in both datasets. We know that <code>state</code> and <code>communityname</code> are common to both datasets so we&apos;ll pass them as a vector by combining the two names together.</td>
+</tr>
+</tbody>
+</table>
+<p>For more information on how the <a href="http://bit.ly/R_merge" target="_blank"><code>merge()</code></a> function works, type <code>help(merge)</code> in R.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># merge the two datasets</span>
+communities &lt;- merge(communities, communities_employment, by = c(<span class="hljs-string">&quot;state&quot;</span>, <span class="hljs-string">&quot;communityname&quot;</span>))
+
+<span class="hljs-comment"># explore dataset</span>
+names(communities)
+</code></pre>
+<pre><code> [1] &quot;state&quot;            &quot;communityname&quot;    &quot;county&quot;          
+ [4] &quot;community&quot;        &quot;fold&quot;             &quot;population&quot;      
+ [7] &quot;householdsize&quot;    &quot;racepctblack&quot;     &quot;racePctWhite&quot;    
+[10] &quot;racePctAsian&quot;     &quot;racePctHisp&quot;      &quot;agePct12t21&quot;     
+[13] &quot;agePct12t29&quot;      &quot;agePct16t24&quot;      &quot;agePct65up&quot;      
+[16] &quot;numbUrban&quot;        &quot;pctUrban&quot;         &quot;medIncome&quot;       
+[19] &quot;pctWWage&quot;         &quot;pctWFarmSelf&quot;     &quot;pctWInvInc&quot;      
+[22] &quot;pctWSocSec&quot;       &quot;pctWPubAsst&quot;      &quot;pctWRetire&quot;      
+[25] &quot;medFamInc&quot;        &quot;perCapInc&quot;        &quot;whitePerCap&quot;     
+[28] &quot;blackPerCap&quot;      &quot;indianPerCap&quot;     &quot;AsianPerCap&quot;     
+[31] &quot;OtherPerCap&quot;      &quot;HispPerCap&quot;       &quot;NumUnderPov&quot;     
+[34] &quot;PctPopUnderPov&quot;   &quot;PctLess9thGrade&quot;  &quot;PctNotHSGrad&quot;    
+[37] &quot;PctBSorMore&quot;      &quot;PctUnemployed&quot;    &quot;PctEmploy&quot;       
+[40] &quot;PctEmplManu&quot;      &quot;PctEmplProfServ&quot;  &quot;PctOccupManu&quot;    
+[43] &quot;PctOccupMgmtProf&quot;
+</code></pre><pre><code class="lang-r">View(communities)
+</code></pre>
+<p>Since our dataset has more columns than we need, let&apos;s select only the ones we&apos;re interested in and rename them with meaningful names. One approach would be to use either the <a href="http://bit.ly/R_subset" target="_blank"><code>subset()</code></a> function or the square bracket <a href="http://bit.ly/R_extract" target="_blank"><code>[ ]</code> extraction operator</a> for selecting the columns we&apos;re interested in. But the easiest way to accomplish this is with the dplyr <a href="http://bit.ly/R_dplyr" target="_blank"><code>select()</code></a> function that allows us select the columns we need and rename them at the same time.</p>
+<pre><code class="lang-r">communities &lt;- select(communities, 
+                      state, 
+                      Community = communityname, 
+                      UnemploymentRate = PctUnemployed, 
+                      NoHighSchool = PctNotHSGrad,
+                      White = racePctWhite)
+</code></pre>
+<p>Now that we&apos;ve merged the dataset and renamed the columns the way we want, let&apos;s try to visualize the data.</p>
+<pre><code class="lang-r">plot(communities$NoHighSchool, communities$UnemploymentRate,
+     xlab = <span class="hljs-string">&quot;Adults without High School education (%)&quot;</span>,
+     ylab = <span class="hljs-string">&quot;Unemployment Rate&quot;</span>)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-29-1.png" alt=""></p>
+<p>Now we can run the bivariate model:</p>
+<pre><code class="lang-r">model1 &lt;- lm(UnemploymentRate ~ NoHighSchool, data = communities)
+
+summary(model1)
+</code></pre>
+<pre><code>Call:
+lm(formula = UnemploymentRate ~ NoHighSchool, data = communities)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.42347 -0.08499 -0.01189  0.07711  0.56470 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  0.078952   0.006483   12.18   &lt;2e-16 ***
+NoHighSchool 0.742385   0.014955   49.64   &lt;2e-16 ***
+---
+Signif. codes:  0 &apos;***&apos; 0.001 &apos;**&apos; 0.01 &apos;*&apos; 0.05 &apos;.&apos; 0.1 &apos; &apos; 1
+
+Residual standard error: 0.1352 on 1992 degrees of freedom
+Multiple R-squared:  0.553, Adjusted R-squared:  0.5527 
+F-statistic:  2464 on 1 and 1992 DF,  p-value: &lt; 2.2e-16
+</code></pre><p>Now let&apos;s plot the regression line with our observations using the <a href="http://bit.ly/R_abline" target="_blank"><code>abline()</code></a> function.</p>
+<pre><code class="lang-r">plot(communities$NoHighSchool, communities$UnemploymentRate,
+     xlab = <span class="hljs-string">&quot;Adults without High School education (%)&quot;</span>,
+     ylab = <span class="hljs-string">&quot;Unemployment Rate&quot;</span>)
+abline(model1, col = <span class="hljs-string">&quot;red&quot;</span>)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-31-1.png" alt=""></p>
+<p>Let&apos;s take a look at how to display the output of a regression model on the screen using the <a href="http://bit.ly/R_texreg" target="_blank"><code>screenreg()</code></a> function from <code>texreg</code>.</p>
+<pre><code class="lang-r">screenreg(model1)
+</code></pre>
+<pre><code>=========================
+              Model 1    
+-------------------------
+(Intercept)      0.08 ***
+                (0.01)   
+NoHighSchool     0.74 ***
+                (0.01)   
+-------------------------
+R^2              0.55    
+Adj. R^2         0.55    
+Num. obs.     1994       
+RMSE             0.14    
+=========================
+*** p &lt; 0.001, ** p &lt; 0.01, * p &lt; 0.05
+</code></pre><p>Now, let&apos;s fit a multiple regression model and use <code>screenreg()</code> to display both models side by side. We can also use <code>htmlreg()</code> to create a Word file with the models:</p>
+<pre><code class="lang-r">model2 &lt;- lm(UnemploymentRate ~ NoHighSchool + White, data = communities)
+summary(model2)
+</code></pre>
+<pre><code>Call:
+lm(formula = UnemploymentRate ~ NoHighSchool + White, data = communities)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.37864 -0.08488 -0.01502  0.07402  0.57313 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   0.24477    0.01477   16.57   &lt;2e-16 ***
+NoHighSchool  0.64318    0.01649   39.01   &lt;2e-16 ***
+White        -0.16954    0.01368  -12.39   &lt;2e-16 ***
+---
+Signif. codes:  0 &apos;***&apos; 0.001 &apos;**&apos; 0.01 &apos;*&apos; 0.05 &apos;.&apos; 0.1 &apos; &apos; 1
+
+Residual standard error: 0.1303 on 1991 degrees of freedom
+Multiple R-squared:  0.585, Adjusted R-squared:  0.5846 
+F-statistic:  1403 on 2 and 1991 DF,  p-value: &lt; 2.2e-16
+</code></pre><pre><code class="lang-r">screenreg(list(model1, model2))
+</code></pre>
+<pre><code>======================================
+              Model 1      Model 2    
+--------------------------------------
+(Intercept)      0.08 ***     0.24 ***
+                (0.01)       (0.01)   
+NoHighSchool     0.74 ***     0.64 ***
+                (0.01)       (0.02)   
+White                        -0.17 ***
+                             (0.01)   
+--------------------------------------
+R^2              0.55         0.58    
+Adj. R^2         0.55         0.58    
+Num. obs.     1994         1994       
+RMSE             0.14         0.13    
+======================================
+*** p &lt; 0.001, ** p &lt; 0.01, * p &lt; 0.05
+</code></pre><pre><code class="lang-r">htmlreg(list(model1, model2), file=<span class="hljs-string">&quot;models.doc&quot;</span>)
+</code></pre>
+<pre><code>The table was written to the file &apos;models.doc&apos;.
+</code></pre><h2 id="plotting-confidence-intervals-of-linear-models">Plotting confidence intervals of linear models</h2>
+<p>We will use the <code>ggplot2</code> package to plot the predicted values of the linear model. <code>ggplot2</code> works on the basis of layers. We first create the base layer that contains the data, and then we add the other layers using <code>+</code></p>
+<pre><code class="lang-r">g &lt;- ggplot(data = communities, aes(y = UnemploymentRate, x = NoHighSchool))
+g + geom_smooth(method = <span class="hljs-string">&quot;lm&quot;</span>)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-34-1.png" alt=""></p>
+<pre><code class="lang-r">g + geom_point() + geom_smooth(method = <span class="hljs-string">&quot;lm&quot;</span>) + 
+  labs(title = <span class="hljs-string">&quot;Model1&quot;</span>, x = <span class="hljs-string">&quot;Not on High School&quot;</span>, y = <span class="hljs-string">&quot;Unemployment Rate&quot;</span>)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-34-2.png" alt=""></p>
+<p>This option is limited to bivariate regressions and not to multiple models. The <code>Zelig</code> package allows us to estimate the confidence intervals for multiple models. This package requires that we re-estimate the models using their own function (<code>zelig()</code>), which is very similar to <code>lm()</code> but it also works for other regression models. We then need to define the values of X that we want to plot, and then we can simulate in order to get the confidence intervals</p>
+<pre><code class="lang-r">z.out &lt;- zelig(UnemploymentRate ~ NoHighSchool + White, data = communities, 
+               model = <span class="hljs-string">&quot;ls&quot;</span>, cite=<span class="hljs-literal">FALSE</span>)
+summary(z.out)
+</code></pre>
+<pre><code>Call:
+lm(formula = formula, weights = weights, model = F, data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.37864 -0.08488 -0.01502  0.07402  0.57313 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   0.24477    0.01477   16.57   &lt;2e-16 ***
+NoHighSchool  0.64318    0.01649   39.01   &lt;2e-16 ***
+White        -0.16954    0.01368  -12.39   &lt;2e-16 ***
+---
+Signif. codes:  0 &apos;***&apos; 0.001 &apos;**&apos; 0.01 &apos;*&apos; 0.05 &apos;.&apos; 0.1 &apos; &apos; 1
+
+Residual standard error: 0.1303 on 1991 degrees of freedom
+Multiple R-squared:  0.585, Adjusted R-squared:  0.5846 
+F-statistic:  1403 on 2 and 1991 DF,  p-value: &lt; 2.2e-16
+</code></pre><pre><code class="lang-r">x.out &lt;- setx(z.out, White = seq(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0.1</span>))
+s.out &lt;- sim(z.out, x=x.out)
+summary(s.out)
+</code></pre>
+<pre><code>Expected Values: E(Y|X) 
+                                                mean          sd       50%
+[NoHighSchool=0.38332998996991, White=0]   0.4912850 0.010690577 0.4911525
+[NoHighSchool=0.38332998996991, White=0.1] 0.4739565 0.009237769 0.4741268
+[NoHighSchool=0.38332998996991, White=0.2] 0.4571479 0.007881687 0.4571415
+[NoHighSchool=0.38332998996991, White=0.3] 0.4402735 0.006979485 0.4399915
+[NoHighSchool=0.38332998996991, White=0.4] 0.4233113 0.005436500 0.4233914
+[NoHighSchool=0.38332998996991, White=0.5] 0.4066605 0.004499378 0.4068849
+[NoHighSchool=0.38332998996991, White=0.6] 0.3895672 0.003402581 0.3896112
+[NoHighSchool=0.38332998996991, White=0.7] 0.3725541 0.003109003 0.3725742
+[NoHighSchool=0.38332998996991, White=0.8] 0.3555850 0.002876609 0.3554357
+[NoHighSchool=0.38332998996991, White=0.9] 0.3387187 0.003604380 0.3387380
+[NoHighSchool=0.38332998996991, White=1]   0.3217179 0.004380531 0.3217305
+                                                2.5%     97.5%
+[NoHighSchool=0.38332998996991, White=0]   0.4709020 0.5119803
+[NoHighSchool=0.38332998996991, White=0.1] 0.4559409 0.4926629
+[NoHighSchool=0.38332998996991, White=0.2] 0.4420286 0.4720256
+[NoHighSchool=0.38332998996991, White=0.3] 0.4266798 0.4538857
+[NoHighSchool=0.38332998996991, White=0.4] 0.4120841 0.4337639
+[NoHighSchool=0.38332998996991, White=0.5] 0.3978156 0.4152649
+[NoHighSchool=0.38332998996991, White=0.6] 0.3831149 0.3957922
+[NoHighSchool=0.38332998996991, White=0.7] 0.3665391 0.3786593
+[NoHighSchool=0.38332998996991, White=0.8] 0.3501994 0.3612224
+[NoHighSchool=0.38332998996991, White=0.9] 0.3317173 0.3455965
+[NoHighSchool=0.38332998996991, White=1]   0.3127192 0.3301088
+
+
+Predicted Values: Y|X 
+                                                mean          sd       50%
+[NoHighSchool=0.38332998996991, White=0]   0.4912850 0.010690577 0.4911525
+[NoHighSchool=0.38332998996991, White=0.1] 0.4739565 0.009237769 0.4741268
+[NoHighSchool=0.38332998996991, White=0.2] 0.4571479 0.007881687 0.4571415
+[NoHighSchool=0.38332998996991, White=0.3] 0.4402735 0.006979485 0.4399915
+[NoHighSchool=0.38332998996991, White=0.4] 0.4233113 0.005436500 0.4233914
+[NoHighSchool=0.38332998996991, White=0.5] 0.4066605 0.004499378 0.4068849
+[NoHighSchool=0.38332998996991, White=0.6] 0.3895672 0.003402581 0.3896112
+[NoHighSchool=0.38332998996991, White=0.7] 0.3725541 0.003109003 0.3725742
+[NoHighSchool=0.38332998996991, White=0.8] 0.3555850 0.002876609 0.3554357
+[NoHighSchool=0.38332998996991, White=0.9] 0.3387187 0.003604380 0.3387380
+[NoHighSchool=0.38332998996991, White=1]   0.3217179 0.004380531 0.3217305
+                                                2.5%     97.5%
+[NoHighSchool=0.38332998996991, White=0]   0.4709020 0.5119803
+[NoHighSchool=0.38332998996991, White=0.1] 0.4559409 0.4926629
+[NoHighSchool=0.38332998996991, White=0.2] 0.4420286 0.4720256
+[NoHighSchool=0.38332998996991, White=0.3] 0.4266798 0.4538857
+[NoHighSchool=0.38332998996991, White=0.4] 0.4120841 0.4337639
+[NoHighSchool=0.38332998996991, White=0.5] 0.3978156 0.4152649
+[NoHighSchool=0.38332998996991, White=0.6] 0.3831149 0.3957922
+[NoHighSchool=0.38332998996991, White=0.7] 0.3665391 0.3786593
+[NoHighSchool=0.38332998996991, White=0.8] 0.3501994 0.3612224
+[NoHighSchool=0.38332998996991, White=0.9] 0.3317173 0.3455965
+[NoHighSchool=0.38332998996991, White=1]   0.3127192 0.3301088
+</code></pre><pre><code class="lang-r">plot(s.out, main = <span class="hljs-string">&quot;Model 2&quot;</span>)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-35-1.png" alt=""></p>
+<h2 id="heteroskedasticity">Heteroskedasticity</h2>
+<p>To test for heteroskedasticity we use the Breusch-Pagan test, with the <code>bptest()</code> function from the <code>lmtest</code> package:</p>
+<pre><code class="lang-r">bptest(model2)
+</code></pre>
+<pre><code>    studentized Breusch-Pagan test
+
+data:  model2
+BP = 135.02, df = 2, p-value &lt; 2.2e-16
+</code></pre><pre><code class="lang-r">vcov(model2) <span class="hljs-comment"># This function displays the variance-covariance matrix from model1</span>
+</code></pre>
+<pre><code>               (Intercept)  NoHighSchool         White
+(Intercept)   0.0002181035 -0.0001867714 -0.0001830833
+NoHighSchool -0.0001867714  0.0002718532  0.0001095398
+White        -0.0001830833  0.0001095398  0.0001871970
+</code></pre><p>In order to recalculate the standard errors, we use the <code>coeftest()</code> function from the <code>lmtest</code> package to display the coefficients and their t-tests. One option of this function is that we can replace the variance-covariance matrix with a different (corrected) one. We will use the <code>vcovHC()</code> function from the <code>sandwich</code> package to estimate the new matrix.</p>
+<pre><code class="lang-r">coeftest(model2) <span class="hljs-comment"># Shows the coefficients and their corresponding t-tests</span>
+</code></pre>
+<pre><code>t test of coefficients:
+
+              Estimate Std. Error t value  Pr(&gt;|t|)    
+(Intercept)   0.244768   0.014768  16.574 &lt; 2.2e-16 ***
+NoHighSchool  0.643176   0.016488  39.009 &lt; 2.2e-16 ***
+White        -0.169542   0.013682 -12.392 &lt; 2.2e-16 ***
+---
+Signif. codes:  0 &apos;***&apos; 0.001 &apos;**&apos; 0.01 &apos;*&apos; 0.05 &apos;.&apos; 0.1 &apos; &apos; 1
+</code></pre><pre><code class="lang-r">coeftest(model2, vcov=vcovHC(model2))
+</code></pre>
+<pre><code>t test of coefficients:
+
+              Estimate Std. Error t value  Pr(&gt;|t|)    
+(Intercept)   0.244768   0.016054  15.247 &lt; 2.2e-16 ***
+NoHighSchool  0.643176   0.018532  34.706 &lt; 2.2e-16 ***
+White        -0.169542   0.015406 -11.005 &lt; 2.2e-16 ***
+---
+Signif. codes:  0 &apos;***&apos; 0.001 &apos;**&apos; 0.01 &apos;*&apos; 0.05 &apos;.&apos; 0.1 &apos; &apos; 1
+</code></pre><h3 id="interactions">Interactions</h3>
+<p>We will use the Quality of Government data using four variables:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>What is measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>undp_hdi</code></td>
+<td>Human development index. Higher values, better quality of life.</td>
+</tr>
+<tr>
+<td><code>wbgi_cce</code></td>
+<td>Control of corruption. Higher values, better control of corruption.</td>
+</tr>
+<tr>
+<td><code>former_col</code></td>
+<td>A former colony or not. 1 indicates former colonies.</td>
+</tr>
+<tr>
+<td><code>wdi_gdpc</code></td>
+<td>GDP/captia in $US. Larger values more average income.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-r">rm(list=ls()) <span class="hljs-comment"># To clean our environment</span>
+
+<span class="hljs-comment"># load quality of government institute 2015 dataset</span>
+world.data &lt;- read.dta(<span class="hljs-string">&quot;http://uclspp.github.io/PUBLG100/data/QoG2012.dta&quot;</span>)
+
+<span class="hljs-comment"># we remove NA&apos;s</span>
+world.data &lt;- na.omit(world.data)
+
+<span class="hljs-comment"># let&apos;s transform the former_col variable into a factor</span>
+world.data$former_col &lt;- factor(world.data$former_col, levels=c(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>), labels = c(<span class="hljs-string">&quot;No&quot;</span>, <span class="hljs-string">&quot;Yes&quot;</span>))
+
+<span class="hljs-comment"># run the multiple regression</span>
+m1 &lt;- lm(undp_hdi ~ wbgi_cce + former_col, data = world.data)
+
+<span class="hljs-comment"># regression table</span>
+screenreg(m1)
+</code></pre>
+<pre><code>=========================
+               Model 1   
+-------------------------
+(Intercept)      0.78 ***
+                (0.02)   
+wbgi_cce         0.10 ***
+                (0.01)   
+former_colYes   -0.13 ***
+                (0.02)   
+-------------------------
+R^2              0.57    
+Adj. R^2         0.56    
+Num. obs.      158       
+RMSE             0.12    
+=========================
+*** p &lt; 0.001, ** p &lt; 0.01, * p &lt; 0.05
+</code></pre><p>Now let&apos;s run the interaction term:</p>
+<pre><code class="lang-r">m2 &lt;- lm(undp_hdi ~ wbgi_cce * former_col, data = world.data)
+summary(m2)
+</code></pre>
+<pre><code>Call:
+lm(formula = undp_hdi ~ wbgi_cce * former_col, data = world.data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.39546 -0.04167  0.00794  0.06415  0.29011 
+
+Coefficients:
+                       Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)             0.79211    0.01710  46.315  &lt; 2e-16 ***
+wbgi_cce                0.07467    0.01333   5.603 9.44e-08 ***
+former_colYes          -0.13429    0.02162  -6.211 4.70e-09 ***
+wbgi_cce:former_colYes  0.05600    0.02078   2.695  0.00783 ** 
+---
+Signif. codes:  0 &apos;***&apos; 0.001 &apos;**&apos; 0.01 &apos;*&apos; 0.05 &apos;.&apos; 0.1 &apos; &apos; 1
+
+Residual standard error: 0.1202 on 154 degrees of freedom
+Multiple R-squared:  0.587, Adjusted R-squared:  0.579 
+F-statistic: 72.97 on 3 and 154 DF,  p-value: &lt; 2.2e-16
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># F-test </span>
+anova(m1, m2)
+</code></pre>
+<pre><code>Analysis of Variance Table
+
+Model 1: undp_hdi ~ wbgi_cce + former_col
+Model 2: undp_hdi ~ wbgi_cce * former_col
+  Res.Df    RSS Df Sum of Sq      F  Pr(&gt;F)   
+1    155 2.3318                               
+2    154 2.2269  1   0.10499 7.2607 0.00783 **
+---
+Signif. codes:  0 &apos;***&apos; 0.001 &apos;**&apos; 0.01 &apos;*&apos; 0.05 &apos;.&apos; 0.1 &apos; &apos; 1
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># regression table</span>
+screenreg(list(m1, m2))
+</code></pre>
+<pre><code>==============================================
+                        Model 1     Model 2   
+----------------------------------------------
+(Intercept)               0.78 ***    0.79 ***
+                         (0.02)      (0.02)   
+wbgi_cce                  0.10 ***    0.07 ***
+                         (0.01)      (0.01)   
+former_colYes            -0.13 ***   -0.13 ***
+                         (0.02)      (0.02)   
+wbgi_cce:former_colYes                0.06 ** 
+                                     (0.02)   
+----------------------------------------------
+R^2                       0.57        0.59    
+Adj. R^2                  0.56        0.58    
+Num. obs.               158         158       
+RMSE                      0.12        0.12    
+==============================================
+*** p &lt; 0.001, ** p &lt; 0.01, * p &lt; 0.05
+</code></pre><p>Plotting the interaction terms:</p>
+<pre><code class="lang-r"><span class="hljs-comment"># Using the plot function with the effects package</span>
+plot(effect(term= <span class="hljs-string">&quot;wbgi_cce:former_col&quot;</span>, mod=m2, x.var = <span class="hljs-string">&quot;wbgi_cce&quot;</span>), multiline = <span class="hljs-literal">TRUE</span>)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-40-1.png" alt=""></p>
+<pre><code class="lang-r"><span class="hljs-comment"># Using ggplot2</span>
+g &lt;- ggplot(world.data, aes(x = wbgi_cce, y = undp_hdi, group = former_col, colour = former_col))
+g + geom_smooth(method=<span class="hljs-string">&quot;lm&quot;</span>)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-40-2.png" alt=""></p>
+<pre><code class="lang-r"><span class="hljs-comment"># Using Zelig</span>
+z.out &lt;- zelig(undp_hdi ~ wbgi_cce * former_col, data = world.data, model=<span class="hljs-string">&quot;ls&quot;</span>, cite=<span class="hljs-literal">FALSE</span>)
+<span class="hljs-comment"># set covariates for countries that weren&apos;t colonised</span>
+x.out1 &lt;- setx(z.out, former_col = <span class="hljs-string">&quot;No&quot;</span>, wbgi_cce = -<span class="hljs-number">3</span>:<span class="hljs-number">2</span>)
+<span class="hljs-comment"># set covariates for colonised countries</span>
+x.out2 &lt;- setx(z.out, former_col = <span class="hljs-string">&quot;Yes&quot;</span>, wbgi_cce = -<span class="hljs-number">3</span>:<span class="hljs-number">2</span>)
+<span class="hljs-comment"># simulate </span>
+s.out &lt;- sim(z.out, x = x.out1, x1 = x.out2)
+summary(s.out)
+</code></pre>
+<pre><code>Expected Values: E(Y|X) 
+                                  mean         sd       50%      2.5%
+[former_col=No, wbgi_cce=-3] 0.5657329 0.04883139 0.5636010 0.4730275
+[former_col=No, wbgi_cce=-2] 0.6422917 0.03717294 0.6413977 0.5690822
+[former_col=No, wbgi_cce=-1] 0.7173848 0.02425738 0.7181697 0.6693696
+[former_col=No, wbgi_cce=0]  0.7920908 0.01706827 0.7926531 0.7589231
+[former_col=No, wbgi_cce=1]  0.8672700 0.01706872 0.8666629 0.8337371
+[former_col=No, wbgi_cce=2]  0.9428224 0.02505369 0.9430139 0.8929875
+                                 97.5%
+[former_col=No, wbgi_cce=-3] 0.6624020
+[former_col=No, wbgi_cce=-2] 0.7143001
+[former_col=No, wbgi_cce=-1] 0.7647348
+[former_col=No, wbgi_cce=0]  0.8261120
+[former_col=No, wbgi_cce=1]  0.9023111
+[former_col=No, wbgi_cce=2]  0.9923169
+
+
+Expected Values: E(Y|X1) 
+                                  mean         sd       50%      2.5%
+[former_col=No, wbgi_cce=-3] 0.2681871 0.04352305 0.2692041 0.1851014
+[former_col=No, wbgi_cce=-2] 0.3972183 0.03076959 0.3963034 0.3395343
+[former_col=No, wbgi_cce=-1] 0.5276009 0.01617994 0.5281814 0.4962307
+[former_col=No, wbgi_cce=0]  0.6576996 0.01286766 0.6579711 0.6318326
+[former_col=No, wbgi_cce=1]  0.7889627 0.02423962 0.7887719 0.7430038
+[former_col=No, wbgi_cce=2]  0.9181464 0.03939396 0.9179150 0.8416299
+                                 97.5%
+[former_col=No, wbgi_cce=-3] 0.3526553
+[former_col=No, wbgi_cce=-2] 0.4582696
+[former_col=No, wbgi_cce=-1] 0.5583652
+[former_col=No, wbgi_cce=0]  0.6835169
+[former_col=No, wbgi_cce=1]  0.8337421
+[former_col=No, wbgi_cce=2]  0.9952081
+
+
+Predicted Values: Y|X 
+                                  mean         sd       50%      2.5%
+[former_col=No, wbgi_cce=-3] 0.5657329 0.04883139 0.5636010 0.4730275
+[former_col=No, wbgi_cce=-2] 0.6422917 0.03717294 0.6413977 0.5690822
+[former_col=No, wbgi_cce=-1] 0.7173848 0.02425738 0.7181697 0.6693696
+[former_col=No, wbgi_cce=0]  0.7920908 0.01706827 0.7926531 0.7589231
+[former_col=No, wbgi_cce=1]  0.8672700 0.01706872 0.8666629 0.8337371
+[former_col=No, wbgi_cce=2]  0.9428224 0.02505369 0.9430139 0.8929875
+                                 97.5%
+[former_col=No, wbgi_cce=-3] 0.6624020
+[former_col=No, wbgi_cce=-2] 0.7143001
+[former_col=No, wbgi_cce=-1] 0.7647348
+[former_col=No, wbgi_cce=0]  0.8261120
+[former_col=No, wbgi_cce=1]  0.9023111
+[former_col=No, wbgi_cce=2]  0.9923169
+
+
+Predicted Values: Y|X1 
+                                  mean         sd       50%      2.5%
+[former_col=No, wbgi_cce=-3] 0.2681871 0.04352305 0.2692041 0.1851014
+[former_col=No, wbgi_cce=-2] 0.3972183 0.03076959 0.3963034 0.3395343
+[former_col=No, wbgi_cce=-1] 0.5276009 0.01617994 0.5281814 0.4962307
+[former_col=No, wbgi_cce=0]  0.6576996 0.01286766 0.6579711 0.6318326
+[former_col=No, wbgi_cce=1]  0.7889627 0.02423962 0.7887719 0.7430038
+[former_col=No, wbgi_cce=2]  0.9181464 0.03939396 0.9179150 0.8416299
+                                 97.5%
+[former_col=No, wbgi_cce=-3] 0.3526553
+[former_col=No, wbgi_cce=-2] 0.4582696
+[former_col=No, wbgi_cce=-1] 0.5583652
+[former_col=No, wbgi_cce=0]  0.6835169
+[former_col=No, wbgi_cce=1]  0.8337421
+[former_col=No, wbgi_cce=2]  0.9952081
+
+
+First Differences: E(Y|X1) - E(Y|X) 
+                                    mean         sd         50%       2.5%
+[former_col=No, wbgi_cce=-3] -0.29754587 0.06626938 -0.29740263 -0.4368443
+[former_col=No, wbgi_cce=-2] -0.24507341 0.04918845 -0.24486657 -0.3369883
+[former_col=No, wbgi_cce=-1] -0.18978386 0.02915835 -0.18975274 -0.2448669
+[former_col=No, wbgi_cce=0]  -0.13439119 0.02097508 -0.13467539 -0.1751177
+[former_col=No, wbgi_cce=1]  -0.07830729 0.02953520 -0.07852311 -0.1359753
+[former_col=No, wbgi_cce=2]  -0.02467595 0.04724487 -0.02521982 -0.1170963
+                                   97.5%
+[former_col=No, wbgi_cce=-3] -0.16834027
+[former_col=No, wbgi_cce=-2] -0.15098995
+[former_col=No, wbgi_cce=-1] -0.13249598
+[former_col=No, wbgi_cce=0]  -0.09232021
+[former_col=No, wbgi_cce=1]  -0.02127745
+[former_col=No, wbgi_cce=2]   0.06427530
+</code></pre><pre><code class="lang-r">plot(s.out)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-40-3.png" alt=""></p>
+<h3 id="interactions-two-continuous-variables">Interactions: two continuous variables</h3>
+<pre><code class="lang-r"><span class="hljs-comment"># plot of relationship b/w income &amp; the human development index</span>
+plot( undp_hdi ~ wdi_gdpc,
+      data = world.data,
+      xlim = c( xmin = <span class="hljs-number">0</span>, xmax = <span class="hljs-number">65000</span>),
+      ylim = c( ymin = <span class="hljs-number">0</span>, ymax = <span class="hljs-number">1</span>),
+      frame = <span class="hljs-literal">FALSE</span>,
+      xlab = <span class="hljs-string">&quot;World Bank GDP/captia&quot;</span>,
+      ylab = <span class="hljs-string">&quot;Human Development Index&quot;</span>,
+      main = <span class="hljs-string">&quot;Relationship b/w Income and Quality of Life&quot;</span>)
+
+<span class="hljs-comment"># add the regression line </span>
+abline(lm(undp_hdi ~ wdi_gdpc, data = world.data))
+
+<span class="hljs-comment"># lowess line</span>
+lines(lowess(world.data$wdi_gdpc, world.data$undp_hdi), col=<span class="hljs-string">&quot;red&quot;</span>)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-41-1.png" alt=""></p>
+<p>To estimate the square effect, we need to use the <code>I()</code> index option</p>
+<pre><code class="lang-r"><span class="hljs-comment"># we include a quadradic term for income</span>
+m3 &lt;- lm(undp_hdi ~ wdi_gdpc + I(wdi_gdpc^<span class="hljs-number">2</span>), 
+               data = world.data)
+
+<span class="hljs-comment"># regression output</span>
+summary(m3)
+</code></pre>
+<pre><code>Call:
+lm(formula = undp_hdi ~ wdi_gdpc + I(wdi_gdpc^2), data = world.data)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.261986 -0.070042 -0.003689  0.090414  0.222661 
+
+Coefficients:
+                Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)    5.202e-01  1.305e-02  39.856   &lt;2e-16 ***
+wdi_gdpc       2.549e-05  1.777e-06  14.345   &lt;2e-16 ***
+I(wdi_gdpc^2) -3.534e-10  3.815e-11  -9.264   &lt;2e-16 ***
+---
+Signif. codes:  0 &apos;***&apos; 0.001 &apos;**&apos; 0.01 &apos;*&apos; 0.05 &apos;.&apos; 0.1 &apos; &apos; 1
+
+Residual standard error: 0.1059 on 155 degrees of freedom
+Multiple R-squared:  0.6776,    Adjusted R-squared:  0.6734 
+F-statistic: 162.9 on 2 and 155 DF,  p-value: &lt; 2.2e-16
+</code></pre><p>We can plot the quadratic relationship</p>
+<pre><code class="lang-r"><span class="hljs-comment"># Easiest way is with Zelig</span>
+z.out &lt;- zelig(undp_hdi ~ wdi_gdpc + I(wdi_gdpc^<span class="hljs-number">2</span>), 
+               data = world.data, model = <span class="hljs-string">&quot;ls&quot;</span>, cite = <span class="hljs-literal">F</span>)
+
+<span class="hljs-comment"># setting covariates; GDP/captia is a sequence from 0 to 45000 by steps of 1000</span>
+x.out &lt;- setx(z.out, wdi_gdpc = seq(<span class="hljs-number">0</span>, <span class="hljs-number">60000</span>, <span class="hljs-number">1000</span>))
+
+<span class="hljs-comment"># simulate using our model and our covariates</span>
+s.out &lt;- sim(z.out, x = x.out)
+
+<span class="hljs-comment"># plot the results</span>
+plot(s.out)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-43-1.png" alt=""></p>
+<h3 id="dplyr-arrange">Dplyr arrange()</h3>
+<p>On some occasions you might want to order a data set according to several criteria. <code>arrange()</code> from dplyr let&apos;s you do that. The default order is ascending. To change to descending, use <code>desc()</code>.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># we order by ex-colony and then hdi </span>
+head(arrange(world.data, former_col, undp_hdi))
+</code></pre>
+<pre><code>  h_j  wdi_gdpc undp_hdi    wbgi_cce   wbgi_pse former_col lp_lat_abst
+1   1  550.5092    0.359 -0.50416088 -1.3376564         No   0.0888889
+2  -5  907.1852    0.504 -0.27502340 -1.5360656         No   0.3111111
+3   1 2140.4829    0.668  0.08207824  1.0622551         No   0.5111111
+4  -5 1178.8358    0.671 -1.06050229 -1.3677230         No   0.4333333
+5   1 1904.1436    0.681 -0.93192887 -0.1513168         No   0.5222222
+6  -5 1556.3955    0.701 -0.80801731 -1.0340041         No   0.4555556
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># note: to change the data set you would have to assign it:</span>
+<span class="hljs-comment"># world.data &lt;- arrange(world.data, former_col, undp_hdi)</span>
+
+<span class="hljs-comment"># the default order is ascending, for descending use:</span>
+head(arrange(world.data, desc(former_col, undp_hdi)))
+</code></pre>
+<pre><code>  h_j   wdi_gdpc undp_hdi   wbgi_cce   wbgi_pse former_col lp_lat_abst
+1  -5  6349.7207    0.704 -0.7301510 -1.7336243        Yes   0.3111111
+2  -5  2856.7517    0.381 -1.2065741 -1.4150945        Yes   0.1366667
+3  -5  8584.8857    0.853 -0.7264611 -1.0361214        Yes   0.3777778
+4  -5 24506.4883    0.843  0.9507225  0.2304108        Yes   0.2888889
+5  -5   947.5254    0.509 -1.0845362 -0.8523579        Yes   0.2666667
+6   1 19188.6406    0.888  1.3267342  1.0257839        Yes   0.1455556
+</code></pre><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../week1/index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction to R, OLS, data manipulation and basic visualisations"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../optional/index.html" class="navigation navigation-next " aria-label="Next page: Optional Material"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

@@ -1,0 +1,6 @@
+-   [Introduction to R, OLS, data manipulation and basic visualisations](week1/index.md)
+    -   [Seminar](week1/seminar1.md)
+-   [Optional Material](optional/index.md)
+    -   [Central Limit Theorem](optional/clt.md)
+    -   [Linear Regression](optional/linear_regression.md)
+-   [R Resources](resources.md)

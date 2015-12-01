@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Central Limit Theorem | UCL SPP Staff R training sessions</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.3.0">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+        <link rel="stylesheet" href="../styles/website.css">
+    
+
+        
+    
+    
+    <link rel="next" href="../optional/linear_regression.html" />
+    
+    
+    <link rel="prev" href="../optional/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="Mon Nov 30 2015 23:56:42 GMT+0000 (GMT)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="week1/index.html">
+            
+                
+                    <a href="../week1/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Introduction to R, OLS, data manipulation and basic visualisations
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="week1/seminar1.html">
+            
+                
+                    <a href="../week1/seminar1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Seminar
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="optional/index.html">
+            
+                
+                    <a href="../optional/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Optional Material
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1" data-path="optional/clt.html">
+            
+                
+                    <a href="../optional/clt.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Central Limit Theorem
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="optional/linear_regression.html">
+            
+                
+                    <a href="../optional/linear_regression.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Linear Regression
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="resources.html">
+            
+                
+                    <a href="../resources.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        R Resources
+                    </a>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >UCL SPP Staff R training sessions</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h3 id="central-limit-theorem">Central Limit Theorem</h3>
+<p>Here&apos;s an example of Central Limit Theorem with a real-world dataset. The dataset includes observations from 130 U.S. hospitals from 1999-2008.</p>
+<p>As we plot the frequency distribution of time spent in hospital, we can see that it is not normally distributed.</p>
+<pre><code class="lang-r">diabetic_data &lt;- read.csv(<span class="hljs-string">&quot;http://uclspp.github.io/PUBLG100/data/diabetic_data.csv&quot;</span>)
+
+par(mfrow=c(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>))
+num_breaks = seq(<span class="hljs-number">1</span>, max(diabetic_data$time_in_hospital))
+hist(diabetic_data$time_in_hospital, breaks = num_breaks, main = <span class="hljs-string">&quot;Time Spent in Hospital&quot;</span>, xlab = <span class="hljs-string">&quot;Days&quot;</span>)
+</code></pre>
+<p><img src="clt_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-1-1.png" alt=""></p>
+<p>According to the Central Limit Theorem, if we repeatedly take samples from this distribution then the frequency distribution of the sample means will be normally distributed. Let&apos;s start by taking 2 samples from our dataset and repeat it 1000 times.</p>
+<p>We first use the <a href="http://bit.ly/R_sample" target="_blank">sample()</a> function to take a sample of 2 observations and see what we get:</p>
+<pre><code class="lang-r">samples &lt;- sample(diabetic_data$time_in_hospital, size = <span class="hljs-number">2</span>)
+samples
+</code></pre>
+<pre><code>[1] 5 1
+</code></pre><p>Recall that our distribution ranges from 1 day spent in the hospital to 14 days.</p>
+<p>We want to draw these samples 1000 times. The <a href="http://bit.ly/R_replicate" target="_blank">replicate()</a> function does precisely what we&apos;re interested in. We can call <a href="http://bit.ly/R_replicate" target="_blank">replicate()</a> with the number of repetitions set to 1000 and ask it to draw samples of size 2 from our dataset.</p>
+<pre><code class="lang-r">samples &lt;- replicate(<span class="hljs-number">1000</span>, sample(diabetic_data$time_in_hospital, <span class="hljs-number">2</span>))
+</code></pre>
+<p>We can verify that <a href="http://bit.ly/R_replicate" target="_blank">replicate()</a> indeed gave us 1000 samples of size 2 using the <a href="http://bit.ly/R_dim" target="_blank">dim()</a> function.</p>
+<pre><code class="lang-r">dim(samples)
+</code></pre>
+<pre><code>[1]    2 1000
+</code></pre><p>Next we need to calculate the mean of 1000 samples where each sample consists of 2 observations. The <a href="http://bit.ly/R_dim" target="_blank">dim()</a> function above shows us that we have a matrix of 2 rows by 1000 columns and we need to calculate the mean for every column. We can do this with the <a href="http://bit.ly/R_apply" target="_blank"><code>apply()</code></a> function that we learned in Week 2.</p>
+<pre><code class="lang-r">sample_means &lt;- apply(samples, <span class="hljs-number">2</span>, mean)
+length(sample_means)
+</code></pre>
+<pre><code>[1] 1000
+</code></pre><p>The length of the variable <code>sample_means</code> is 1000 with each element containing the mean of 1000 samples of 2 observations each. Now we can simply plot the histogram of <code>sample_means</code> to see what this distribution looks like.</p>
+<pre><code class="lang-r">hist(sample_means, breaks = num_breaks, main = <span class="hljs-string">&quot;Sample Size = 2&quot;</span>, xlab = <span class="hljs-string">&quot;Mean&quot;</span>)
+</code></pre>
+<p><img src="clt_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-6-1.png" alt=""></p>
+<p>With a small sample size of 2, the resulting distribution looks a lot like our original distribution of time spent in hospital.</p>
+<p>But how would this distribution change if we were to increase the sample size from 2 to 10 or 20 or even 100?</p>
+<p>One approach would be to repeat the above tasks one by one for each sample size and visualize the sample mean distribution. But that could get tedious. Wouldn&apos;t it be nice to somehow wrap the code we&apos;ve written above and then run it with different sample sizes?</p>
+<p>R provides us with simple yet powerful tools to accomplish just that. We can create our own function that draws samples from the original distribution, calculates the sample mean and then plots it as a distribution in a single function call. We can then run this function with different values for sample sizes with just one line of code.</p>
+<p>Let&apos;s get started by defining a function called <code>plot.sample.means()</code> that takes two parameters -- dataset and sample_size. The <code>plot.sample.means()</code> function will draw samples of <code>sample_size</code> from the dataset 1000 times, calculate the means and plot the distribution exactly the same way as we did above with a sample_size of 2.</p>
+<pre><code class="lang-r">plot.sample.mean &lt;- <span class="hljs-keyword">function</span>(dataset, sample_size) {
+  samples &lt;- replicate(<span class="hljs-number">1000</span>, sample(dataset, sample_size))
+  sample_mean &lt;- apply(samples, <span class="hljs-number">2</span>, mean)
+  hist(sample_mean, breaks = max(dataset), main = paste(<span class="hljs-string">&quot;Sample Size = &quot;</span>, sample_size), xlab = <span class="hljs-string">&quot;Mean&quot;</span>)
+}
+</code></pre>
+<p>We&apos;ve defined our function, but we haven&apos;t told R that we actually want to run it with different sample sizes. Let&apos;s try a sample size of 2 as above and see if our function gives us the same results.</p>
+<pre><code class="lang-r">plot.sample.mean(diabetic_data$time_in_hospital, sample_size = <span class="hljs-number">2</span>)
+</code></pre>
+<p><img src="clt_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-8-1.png" alt=""></p>
+<p>The resulting distribution is exactly the same as we got when we ran the code before it was written as a separate function. We know our function is working, so if we wanted to plot sample means with sample size 10, all we&apos;d have to do is call <code>plot.sample.mean()</code> with <code>sample_size = 10</code>.</p>
+<p>Let&apos;s be ambitious and try sample sizes of 2, 10, 30 and 100 and plot them on a 2-by-2 grid.</p>
+<p>Notice how the distribution becomes closer and closer to being normally distributed as the sample size increases. This is the beauty of the Central Limit Theorem.</p>
+<p>In order to ensure that the plots we&apos;re creating are reproducible we must find a way to generate our distributions in a way that remains consistent over multiple runs. Because the <code>sample()</code> function uses a random number generator for drawing samples, we can initialize it with a <code>seed</code> which remains fixed over time. The <code>seed</code> can be any integer value and it doesn&apos;t matter what the value is, as long as it remains contant. Initializing the <code>seed</code> ensures that two different computers using the same <code>seed</code> will get identical samples from the random number generator.</p>
+<p>In this example we set the <code>seed = 12345</code> for simplicity.</p>
+<pre><code class="lang-r">set.seed(<span class="hljs-number">12345</span>)
+</code></pre>
+<pre><code class="lang-r">par(mfrow=c(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>))
+
+plot.sample.mean(diabetic_data$time_in_hospital, sample_size = <span class="hljs-number">2</span>)
+plot.sample.mean(diabetic_data$time_in_hospital, sample_size = <span class="hljs-number">10</span>)
+plot.sample.mean(diabetic_data$time_in_hospital, sample_size = <span class="hljs-number">30</span>)
+plot.sample.mean(diabetic_data$time_in_hospital, sample_size = <span class="hljs-number">100</span>)
+</code></pre>
+<p><img src="clt_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-10-1.png" alt=""></p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="../js/main.js"></script>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../optional/index.html" class="navigation navigation-prev " aria-label="Previous page: Optional Material"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../optional/linear_regression.html" class="navigation navigation-next " aria-label="Next page: Linear Regression"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

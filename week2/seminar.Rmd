@@ -1,0 +1,464 @@
+# R training for SPP staff (session 2)
+#### Javier Sajuria
+#### 9 December 2015
+
+## Preliminary steps
+
+Remember to set up your working directory and open a new R script
+
+```
+setwd("WD")
+
+```
+
+Now, let's load the relevant packages. If you haven't installed them last week  check the website to get the right commands:
+
+```{r}
+library(foreign) 
+library(car)
+library(readxl) 
+library(texreg)
+library(Zelig)
+library(sandwich)
+library(plm)
+library(ggplot2)
+library(tidyr)
+library(lmtest)
+library(dplyr)
+```
+
+## Panel data
+
+We will use the WDI dataset (`wdi.data`).
+```{r}
+wdi <- read.csv("https://raw.githubusercontent.com/UCLSPP/Staff-R-training/master/Week1/wdi.csv")
+```
+
+The function used to fit the panel data models is plm, and contains (at least) the following parameters:
+
+```
+plm(formula, data, index=c(unit, time), effect = c("individual","time","twoways"),
+    model = c("within","random"))
+```
+
+The arguments  are:
+
+|*Argument*|*Description*|
+|-|-|
+|`formula`| `DV ~ IV`|
+|`data` | The dataset that contains our variables|
+|`index`| Here we specify which variable contains the units and which contains the time|
+|`effect`| This argument defines whether we are estimating the individual fixed effects, the time fixed effect, or both (`"twoways"`)|
+|`model`| Fixed effects (`"within"`) or random effects (`"random"`)|
+
+### Fixed effects:
+
+```{r}
+# We first estimate the OLS model, as a baseline
+
+ols <- lm(MaternalMortality ~ SafeWaterAccess + HealthExpenditure + PregnantWomenWithAnemia, data = wdi)
+summary(ols)
+
+fixed_effects <- plm(MaternalMortality ~ SafeWaterAccess + HealthExpenditure + PregnantWomenWithAnemia, 
+                     data = wdi, 
+                     index = c("CountryCode", "Year"), 
+                     model = "within", 
+                     effect = "individual")
+summary(fixed_effects)
+fixef(fixed_effects)
+
+screenreg(list(ols, fixed_effects))
+
+```
+
+The **country fixed effects** model shows `SafeWaterAccess` and `HealthExpenditure` with strong negative correlation with `MaternalMortality` and `PregnantWomenWithAnemia` with a strong positive correlation. But before we go any further, we need to check whether there are indeed any country fixed effects to begin with. We can test for that with `plmtest()` function. The `plmtest()` function can test for the presence for individual or time effects.
+
+```{r}
+plmtest(fixed_effects, effect="individual")
+```
+
+The null hypothesis for `plmtest()` is that there are no individual effects. The *p-value* suggests that we can reject the null hypothesis and that there are indeed country fixed effects present in our model.
+
+We can model these time fixed effects using the `effect = "time"` argument in `plm()`.
+
+```{r}
+time_effects <- plm(MaternalMortality ~ SafeWaterAccess + HealthExpenditure + PregnantWomenWithAnemia , 
+                    data = wdi, 
+                    index = c("CountryCode", "Year"), 
+                    model = "within", 
+                    effect = "time")
+summary(time_effects)
+
+screenreg(list(ols, fixed_effects, time_effects))
+```
+
+When we account for these time variant factors, we notice that the `HealthExpenditure` variable is now positively correlated with MaternalMortality. One reason for this corrleation could possibly be the rising cost of healthcare in advanced countries where a greater proportion of the GDP is now spent on healthcare costs, but obviously the effects are felt in developing coutries with high maternal mortality rates. 
+
+Let's run the the Lagrange Multiplier test on the `time_effects` model again to see if indeed there are time effects in our model. Remeber, the null hypotheses for the test is that there are no time fixed effects. 
+
+```{r}
+plmtest(time_effects, effect="time")
+```
+
+The *p-value* tells us that we can reject the null hypothesis as there are indeed time fixed effects present. 
+
+We already confirmed the presense of country fixed effects from the first model we estimated. In order to control for both country AND time fixed effects, we need to estimate a model using the `effect = "twoways"` argument.
+
+```{r}
+twoway_effects <- plm(MaternalMortality ~ SafeWaterAccess + HealthExpenditure + PregnantWomenWithAnemia, 
+                      data = wdi, 
+                      index = c("CountryCode", "Year"), 
+                      model = "within", 
+                      effect = "twoways")
+summary(twoway_effects)
+```
+
+The results of all three models are shown below. All three explanatory variables are statistically significant in each model. The coefficients for our explanatory variable in the twoway fixed effect model are close to the country fixed effects indicating that these factors vary greatly across countries than they do across time. 
+
+```{r}
+screenreg(list(fixed_effects, time_effects, twoway_effects), 
+          custom.model.names = c("Country Fixed Effects", "Time Fixed Effects", "Twoway Fixed Effects"))
+```
+
+### More Guns, Less Crimes
+
+We now turn our attention to serial correlation and use the Guns dataset from Stock and Watson. 
+
+Gun rights advocate John Lott argues in his book that crime rates in the United States decrease when gun ownership restrictions are relaxed. The data used in Lott's research compares violent crimes, robberies, and murders across 50 states to determine whether the so called "shall" laws that remove discretion from license granting authorities actually decrease crime rates. So far 41 states have passed "shall" laws where a person applying for a licence to carry a concealed weapon doesn't have to provide justification or "good cause" for requiring a concealed weapon permit.
+
+
+```{r}
+guns_data <- read.csv("http://uclspp.github.io/PUBLG100/data/guns.csv")
+```
+
+The variables we're interested in are described below. You can also get the original codebook from the Stock and Watson website [here](http://wps.aw.com/wps/media/objects/11422/11696965/data3eu/Guns_Description.pdf) that describes other variables in the dataset.
+
+|Indicator|Definition|
+|-|-|
+|mur|murder rate (incidents per 100,000)|
+|shall|= 1 if the state has a shall-carry law in effect in that year <br>= 0 otherwise|
+|incarc_rate|incarceration rate in the state in the previous year (sentenced prisoners per 100,000 residents; value for the previous year)|
+|pm1029|percent of state population that is male, ages 10 to 29|
+
+We will focus on murder rates in this example but you could try the same with variables measuring violent crimes or robberies as well.
+
+Let's create a factor variable representing whether a state has passed "shall" law or not. The variable already exists as `0` or `1` but we want to convert it to a factor for our analysis.
+
+```{r}
+guns_data$shall_law <- factor(guns_data$shall, levels = c(0, 1), labels =c("NO", "YES"))
+```
+
+Let's estimate a fixed effect model on panel data using the `plm()` function. We will restrict our independent variables to the `shall_law`, `incarc_rate`, and `pm1029`.
+
+```{r}
+fixed_effects <- 
+  plm(mur ~ shall_law + incarc_rate + pm1029, 
+      data = guns_data, 
+      index = c("stateid", "year"), 
+      model = "within", 
+      effect = "individual")
+
+summary(fixed_effects)
+```
+
+The `state_effects` model shows that all three of our independent variables are statistically significant, with `shall_law` decreasing murder rates by `1.45` incidents per 100000 members of the population. The effects of incarceration rate and percentage of male population between 10 and 29 years old are also statistically significant.
+
+
+```{r}
+plmtest(fixed_effects, effect="individual")
+```
+
+The p-value suggests the presence of state effects so let's run a two-way fixed effect model incroporating both state effects and time effects.
+
+```{r}
+twoway_effects <- 
+  plm(mur ~ shall_law + incarc_rate + pm1029, 
+      data = guns_data, 
+      index = c("stateid", "year"), 
+      model = "within", 
+      effect = "twoways")
+
+summary(twoway_effects)
+```
+
+In a twoway fixed effects model `shall_law` is no longer significant and the effect of male population between 10 and 29 years old has decreased from 0.95 to 0.73 incidents per 100,000 population.
+
+### Serial Correlation
+
+For time series data we need to address the potential for serial correlation in the error term. We will test for serial correlation with Breusch-Godfrey test using `pbgtest()` and provide solutions for correcting it if necessary.
+
+```{r}
+pbgtest(twoway_effects)
+```
+
+The null hypothesis for the Breusch-Godfrey test is that there is no serial correlation. The `p-value` from the test tells us that we can reject the null hypothesis and confirms the presence of serial corrleation in our error term.
+
+We can correct for serial correlation using `coeftest()` similar to how we corrected for heteroskedastic errors. We'll use the `vcovHC()` function for obtaining a heteroskedasticity-consistent covariance matrix, but since we're interested in correcting for autocorrelation as well, we will specify `method = "arellano"` which corrects for both heteroskedasticity and autocorrelation.
+
+```{r}
+twoway_effects_hac <- coeftest(twoway_effects, vcov = vcovHC(twoway_effects, method = "arellano", type = "HC3"))
+
+screenreg(list(twoway_effects, twoway_effects_hac),
+          custom.model.names = c("Twoway Fixed Effects", "Twoway Fixed Effects (HAC)"))
+```
+
+We can see that with heteroskedasticity and autocorrelation consistent (HAC) standard errors, the percent of male population (10 - 29 yr old) is no longer a significant predictor in our model.
+
+### Lagged Dependent Variables (LDV) and Dynamic Models
+
+Another way to address serial correlation is by modeling the time dependence directly. We can think of a dynamic model as one that takes into account whether changes in the predictor variables have an immediate effect on our dependent variable or whether the effects are distributed over time. In our example, do changes in gun laws affect murder rates immediately or are the effects distributed over time?
+
+We can account time dependence by incorporating a Lagged Dependent Variable (LDV) in our model. A Lagged Dependent Variable (LDV) (as the name suggests) is one that "lags" behind the original observation by *t* time-periods. The `lag()` function generates lagged dependent variables and has the following form:
+
+```
+lag(x, k)
+```
+
+|Argument|Description|
+|-|-|
+|`x`|A vector or matrix of observations|
+|`k`|Number of lags. Default is `1`|
+
+```{r}
+ldv_model <- 
+  plm(mur ~ lag(mur) + shall_law + incarc_rate + pm1029, 
+      data = guns_data, 
+      index = c("stateid", "year"), 
+      model = "within", 
+      effect = "twoways")
+
+summary(ldv_model)
+```
+
+### Cross Sectional Dependence
+
+If a federal law imposed restrictions on gun ownership or licensing requirements then the changes would likely affect all 50 states. This is an example of Cross Sectional Dependence and not accounted for in a fixed effect model. Other scenarios could also trigger cross sectional dependence that we should take into consideration. For example, security policies and law enforment efforts might change after an extraordinary event (think of mass shootings or terrorist attacks) thus affecting law enforment practices in all states. We can check for cross sectional dependence using the Pesaran cross sectional dependence test or `pcdtest()`.
+
+```{r}
+pcdtest(twoway_effects)
+```
+
+As we've seen with other tests, the null hypothesis is that there is no cross sectional dependence. The p-value, however tells that there is indeed cross-sectional dependence and we need to correct it. There are two general approaches to correcting for cross sectional dependence. 
+
+**Beck and Katz (1995) method or Panel Corrected Standard Errors (PCSE)**: We can obtain Panel Corrected Standard Errors (PCSE) by first obtaining a robust variance-covariance matrix for panel models with the Beck and Katz (1995) method using the `vcovBK()` and passing it to the familiar `coeftest()` function.
+
+```{r}
+twoway_effects_pcse <- coeftest(twoway_effects, vcov = vcovBK(twoway_effects, type="HC3", cluster = "group")) 
+```
+
+The results from PCSE are sensitive to the ratio between the number of time periods in the dataset (T) and the total number of observations (N). When we're dealing with large datasets (i.e. the T/N ratio is small), we use the Driscoll and Kraay method:
+
+**Driscoll and Kraay (1998) (SCC)**: The cross-sectional and serial correlation (SCC) method by Driscoll and Kraay addresses the limitations of Beck and Katz's PCSE method is therefore preferred for obtaining heteroskedasticity and autocorrelation consistent errors that are also robust to cross-sectional dependence.
+
+```{r}
+twoway_effects_scc <- coeftest(twoway_effects, vcov = vcovSCC(twoway_effects, type="HC3", cluster = "group"))
+```
+
+```{r}
+screenreg(list(fixed_effects, twoway_effects, ldv_model, twoway_effects_pcse, twoway_effects_scc), 
+          custom.model.names = c("Country Effects", "Twoway Fixed Effects", "LDV", "PCSE", "SCC"))
+```
+
+## Logistic Models
+
+For fitting a logistic model, we will use a subset of the 2010 BES. We will remove any missing data:
+
+```{r}
+bes <- read.dta("http://uclspp.github.io/PUBLG100/data/bes.dta")
+bes <- na.omit(bes)
+head(bes)
+```
+
+The function we use to fit logistic models is `glm()`, and is very similar to the `lm()` function we used for linear models.
+
+```
+glm(formula, data, family)
+```
+
+The new argument is `family`, which needs to be set as `family=binomial(link="logit")` to fit logistic models. We will estimate the probability of voting using the following independent variables:
+
+|**Variable**|**Description**|
+|-|-|
+|`Income`| Groups of income from lowest (1) to highest (13)|
+|`polinfoindex`| Index of political information from 0 to 8|
+|`Gender`|0 if male, 1 if female|
+|`edu15`|Left education when they were 15 years old|
+|`edu17`|Left education when they were 17 years old|
+|`edu18`|Left education when they were 18 years old|
+|`edu19plus`|Left education when they were 19 years old or older|
+|`in_school`|Whether respondent is currently in school|
+|`in_uni`|Whether respondent is currently in university|
+
+
+```{r}
+m1 <- glm(factor(Turnout) ~ Income + polinfoindex + Gender + edu15 + edu17 + edu18 + 
+            edu19plus + in_school + in_uni, family = binomial(link = "logit"),
+          data = bes)
+screenreg(m1)
+```
+
+According to this model, the probability of voting increases when the respondent has more political information, and left education earlier. The probability decreases if the respondent is male or if it is in university.
+
+## Predicted Probabilities and Predictive Power
+
+We first need to get the latent variable `y`. For each observation in the data we do `y = alpha + beta1 * X1 + beta2 * X2....`
+
+```{r}
+y.latent <- predict(m1)
+```
+Result: vector containing the latent y for each combination of covariates in the data
+
+```{r}
+head(y.latent)
+```
+
+Now that we have the latent variable, we put it into the link function to get our precicted probabilities.
+The link function is: `1 / (1 + exp(- y.latent))`
+
+```{r}
+pred.probs <- 1 / (1 + exp(-y.latent))
+summary(pred.probs)
+```
+
+Let's compare our predictions to observed outcomes
+
+```{r}
+observed <- bes$Turnout # those are the observed outcomes
+exp.vals <- rep(0,length(observed))
+# threshold to translate predicted probabilities into outcomes
+threshold <- .5 
+# everyone with a predicted prob > .5 is predicted to turnout
+exp.vals[which(pred.probs > threshold)] <- 1
+# puttint observed and predicted into a table
+qual.pred <- table(observed,exp.vals)
+qual.pred
+
+```
+
+Interpreting the table:
+
+|-|Predicted values|-|
+|-|----------------|-|
+|-|Correct negatives (Good)| False Positives (Bad)|
+|Observed values|-|-|
+|-|False negatives (Bad)|Correct Positives|
+
+We can estimate the proportion of correctly predicted cases using: `(correct negatives + correct positives) / total number of outcomes`
+
+```{r}
+(qual.pred[1,1] + qual.pred[2,2]) / sum(qual.pred)
+# we correctly predict 63.5% of the cases in the data set
+
+
+median(bes$Turnout) # the modal category of Turnout is 1
+mean(bes$Turnout)
+```
+
+
+### Joint hypothesis testing
+
+
+Let's add more variables to our model. `Influence` measures how much Rs believe they can influence politics. This is often used as the `p` (probability to cast the decisive vote) in the rational voter model. We will also add Age, which is a common control
+
+```{r}
+m2 <- glm(Turnout ~ Income + polinfoindex + Influence + Gender + Age +edu15 + 
+            edu17 + edu18 + edu19plus + in_school + in_uni, 
+          family = binomial(link = "logit"), data = bes)
+
+summary(m2)
+screenreg(list(m1, m2))
+```
+
+To test the goodness-of-fit of our second model, we can use the likelihood ratio test:
+
+```{r}
+lrtest(m1, m2)
+```
+
+Other measures of GoF are the AIC (Akaike's Information Criterion) and the BIC (Bayesian Information Criterion) scores. In general, the rule of thumb is that the smaller the AIC and the BIC, the better is the fit of the model
+
+```{r}
+AIC(m1, m2)
+BIC(m1, m2) 
+```
+
+### Using `Zelig` to produce substantial results and plots of the predicted probabilities
+
+
+The Zelig package estimates a large number of models, using a very similar syntax to the one we have learnt for linear models (`lm()`), generalised linear models (`glm()`) or panel data models (`plm()`). This package creates standardised objects that then can be used to estimate the predicted probabilities using simulations (or bootstrapping) for the uncertainty of the estimates. 
+
+To estimate a model with `Zelig` we need to use the `zelig()` function. Note that the main difference is the `model - "logit"` argument.
+
+```{r}
+# z.out is identical to m2
+z.out <- zelig(Turnout ~ Income + polinfoindex + Influence + Gender + Age + edu15 + 
+            edu17 + edu18 + edu19plus + in_school + in_uni, model = "logit", 
+            data = bes, cite = F)
+```
+
+We now need to define a meaningful profile to estimate the predicted probabilities. We will compare a women of 18 years of education to a man with the same education. The `setx()` indicates the values of `x` at which we want to predict the probabilities. 
+
+```{r}
+
+x.fem.18 <- setx(z.out, Income = median(bes$Income), polinfoindex = median(bes$polinfoindex), 
+                 Influence = median(bes$Influence), Gender = 1, Age = median(bes$Age), 
+                 edu15 = 0, edu17 = 0, edu18 = 1, edu19plus = 0, in_school = 0, in_uni = 0)
+x.fem.18$values # check the values you have set
+
+x.male.18 <- setx(z.out, Income = median(bes$Income), polinfoindex = median(bes$polinfoindex), 
+                 Influence = median(bes$Influence), Gender = 0, Age = median(bes$Age), 
+                 edu15 = 0, edu17 = 0, edu18 = 1, edu19plus = 0, in_school = 0, in_uni = 0)
+x.male.18$values
+```
+
+We now use the `sim()` function to simulate the uncertainty around each of the profiles.
+
+
+```{r}
+s.out <- sim(z.out, x = x.fem.18, x1 = x.male.18)
+# let's check the quantities of interest
+names(s.out$qi)
+# expected values express the probability of assigning a 1 to the response variable (Turnout)
+# predicted values express our model prediction (0 or 1) for the response variable (Turnout)
+```
+
+We can illustrate this using numbers (you can write two commands in a single line separated by a semicolon)
+
+```{r fig.width=13, fig.height=11}
+
+ev.fem <- sort(s.out$qi$ev1); ev.men <- sort(s.out$qi$ev2) 
+women <- c(ev.fem[25], ev.fem[500], ev.fem[975])
+men <- c(ev.men[25], ev.men[500], ev.men[975])
+final <- rbind(round(women,2), round(men,2))
+colnames(final) = c("2.5%", "Mean", "97.5%")
+rownames(final) = c("female","male")
+final
+
+# or in 1 line
+summary(s.out)
+
+# graphically
+plot(s.out)
+```
+
+We can also produce predicted probabilities for continuous variables:
+
+```{r}
+x.fem <- setx(z.out, Income = 1:13, polinfoindex = median(bes$polinfoindex), 
+             Influence = median(bes$Influence), Gender = 1, Age =median(bes$Age), 
+             edu15 = 1, edu17 = 0, edu18 = 0, edu19plus = 0, in_school = 0, in_uni = 0)
+x.mal <- setx(z.out, Income = 1:13, polinfoindex = median(bes$polinfoindex), 
+              Influence = median(bes$Influence), Gender = 0, Age =median(bes$Age), 
+              edu15 = 1, edu17 = 0, edu18 = 0, edu19plus = 0, in_school = 0, in_uni = 0)
+names(x.fem)
+names(x.mal)
+s.out2 <- sim(z.out, x = x.fem, x1 = x.mal)
+
+# illustrate
+plot.ci(s.out2, 
+        xlab = "income", 
+        ylab = "predicted probability of Voting (ev in Zelig)",
+        main = "effect of income by gender")
+text(x=2,y=.75,labels="women")
+text(x=7,y=.68,labels="men")
+```
