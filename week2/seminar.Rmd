@@ -1,0 +1,468 @@
+# R training for SPP staff (session 2)
+#### Javier Sajuria
+#### 9 December 2015
+
+## Preliminary steps
+
+Remember to set up your working directory and open a new R script
+
+```
+setwd("WD")
+
+```
+
+Now, let's load the relevant packages. If you haven't installed them last week  check the website to get the right commands:
+
+```{r, message=FALSE, warning=FALSE, cite = FALSE}
+library(foreign) 
+library(car)
+library(readxl) 
+library(texreg)
+library(Zelig)
+library(sandwich)
+library(plm)
+library(ggplot2)
+library(tidyr)
+library(lmtest)
+library(dplyr)
+```
+
+## Panel data
+
+We will use the WDI dataset (`wdi.data`).
+```{r}
+wdi <- read.csv("https://raw.githubusercontent.com/UCLSPP/Staff-R-training/master/Week1/wdi.csv")
+```
+
+The function used to fit the panel data models is plm, and contains (at least) the following parameters:
+
+```
+plm(formula, data, index=c(unit, time), effect = c("individual","time","twoways"),
+    model = c("within","random"))
+```
+
+The arguments  are:
+
+|*Argument*|*Description*|
+|-|-|
+|`formula`| `DV ~ IV`|
+|`data` | The dataset that contains our variables|
+|`index`| Here we specify which variable contains the units and which contains the time|
+|`effect`| This argument defines whether we are estimating the individual fixed effects, the time fixed effect, or both (`"twoways"`)|
+|`model`| Fixed effects (`"within"`) or random effects (`"random"`)|
+
+### Fixed effects:
+
+```{r}
+# We first estimate the OLS model, as a baseline
+
+ols <- lm(MaternalMortality ~ SafeWaterAccess + HealthExpenditure + PregnantWomenWithAnemia, data = wdi)
+summary(ols)
+
+fixed_effects <- plm(MaternalMortality ~ SafeWaterAccess + HealthExpenditure + PregnantWomenWithAnemia, 
+                     data = wdi, 
+                     index = c("CountryCode", "Year"), 
+                     model = "within", 
+                     effect = "individual")
+summary(fixed_effects)
+fixef(fixed_effects)
+
+screenreg(list(ols, fixed_effects))
+
+```
+
+. The `plmtest()` function can test for the presence for individual or time effects.
+
+```{r}
+plmtest(fixed_effects, effect="individual")
+```
+
+The null hypothesis for `plmtest()` is that there are no individual effects. 
+
+We can model these time fixed effects using the `effect = "time"` argument in `plm()`.
+
+```{r}
+time_effects <- plm(MaternalMortality ~ SafeWaterAccess + HealthExpenditure + PregnantWomenWithAnemia , 
+                    data = wdi, 
+                    index = c("CountryCode", "Year"), 
+                    model = "within", 
+                    effect = "time")
+summary(time_effects)
+
+screenreg(list(ols, fixed_effects, time_effects))
+```
+
+
+
+Let's run the the Lagrange Multiplier test on the `time_effects` model again to see if indeed there are time effects in our model. Remeber, the null hypotheses for the test is that there are no time fixed effects. 
+
+```{r}
+plmtest(time_effects, effect="time")
+```
+
+The *p-value* tells us that we can reject the null hypothesis as there are indeed time fixed effects present. 
+
+In order to control for both country AND time fixed effects, we need to estimate a model using the `effect = "twoways"` argument.
+
+```{r}
+twoway_effects <- plm(MaternalMortality ~ SafeWaterAccess + HealthExpenditure + PregnantWomenWithAnemia, 
+                      data = wdi, 
+                      index = c("CountryCode", "Year"), 
+                      model = "within", 
+                      effect = "twoways")
+summary(twoway_effects)
+```
+
+The results of all three models are shown below.
+
+```{r}
+screenreg(list(fixed_effects, time_effects, twoway_effects), 
+          custom.model.names = c("Country Fixed Effects", "Time Fixed Effects", "Twoway Fixed Effects"))
+```
+
+
+
+### Serial Correlation
+
+We will test for serial correlation with Breusch-Godfrey test using `pbgtest()` and provide solutions for correcting it if necessary.
+
+```{r}
+pbgtest(twoway_effects)
+```
+
+The null hypothesis for the Breusch-Godfrey test is that there is no serial correlation. The `p-value` from the test tells us that we can reject the null hypothesis and confirms the presence of serial corrleation in our error term.
+
+We can correct for serial correlation using `coeftest()` similar to how we corrected for heteroskedastic errors. We'll use the `vcovHC()` function for obtaining a heteroskedasticity-consistent covariance matrix, but since we're interested in correcting for autocorrelation as well, we will specify `method = "arellano"` which corrects for both heteroskedasticity and autocorrelation.
+
+```{r}
+twoway_effects_hac <- coeftest(twoway_effects, vcov = vcovHC(twoway_effects, method = "arellano", type = "HC3"))
+
+screenreg(list(twoway_effects, twoway_effects_hac),
+          custom.model.names = c("Twoway Fixed Effects", "Twoway Fixed Effects (HAC)"))
+```
+
+We can see that with heteroskedasticity and autocorrelation consistent (HAC) standard errors, the percent of male population (10 - 29 yr old) is no longer a significant predictor in our model.
+
+### Lagged Dependent Variables (LDV) and Dynamic Models
+
+ The `lag()` function generates lagged dependent variables and has the following form:
+
+```
+lag(x, k)
+```
+
+|Argument|Description|
+|-|-|
+|`x`|A vector or matrix of observations|
+|`k`|Number of lags. Default is `1`|
+
+```{r}
+ldv_model <- 
+  plm(MaternalMortality ~ lag(MaternalMortality) + SafeWaterAccess + HealthExpenditure 
+      + PregnantWomenWithAnemia, 
+                      data = wdi, 
+                      index = c("CountryCode", "Year"), 
+                      model = "within", 
+                      effect = "twoways")
+summary(ldv_model)
+```
+
+### Cross Sectional Dependence
+
+We can check for cross sectional dependence using the Pesaran cross sectional dependence test or `pcdtest()`.
+
+```{r}
+pcdtest(twoway_effects)
+```
+
+As we've seen with other tests, the null hypothesis is that there is no cross sectional dependence. The p-value, however tells that there is indeed cross-sectional dependence and we need to correct it. There are two general approaches to correcting for cross sectional dependence. 
+
+**Beck and Katz (1995) method or Panel Corrected Standard Errors (PCSE)**: We can obtain Panel Corrected Standard Errors (PCSE) by first obtaining a robust variance-covariance matrix for panel models with the Beck and Katz (1995) method using the `vcovBK()` and passing it to the familiar `coeftest()` function.
+
+```{r}
+twoway_effects_pcse <- coeftest(twoway_effects, vcov = vcovBK(twoway_effects, type="HC3", cluster = "group")) 
+```
+
+The results from PCSE are sensitive to the ratio between the number of time periods in the dataset (T) and the total number of observations (N). When we're dealing with large datasets (i.e. the T/N ratio is small), we use the Driscoll and Kraay method:
+
+**Driscoll and Kraay (1998) (SCC)**: 
+
+```{r}
+twoway_effects_scc <- coeftest(twoway_effects, vcov = vcovSCC(twoway_effects, type="HC3", cluster = "group"))
+```
+
+```{r}
+screenreg(list(ols, fixed_effects, twoway_effects, ldv_model, twoway_effects_pcse, twoway_effects_scc), 
+          custom.model.names = c("Pooled","Country Effects", "Twoway Fixed Effects", "LDV", "PCSE", "SCC"))
+```
+
+## Logistic models
+
+```{r message=FALSE}
+
+# clear environment
+rm(list = ls())
+```
+
+### Loading Data
+
+We use a subset of the 2005 face-to-face British post election study to explain turnout. We drop missing values (missings are on the same observations for all variables). We also rename `Gender` to `male` because 1 stands for men.
+
+
+```{r}
+# load British post election study
+bes <- read.dta("http://uclspp.github.io/PUBLG100/data/bes.dta")
+head(bes)
+
+# frequency table of voter turnout
+table(bes$Turnout) 
+
+# rename Gender to male b/c 1 = male & remove missings
+bes <- bes %>%
+  rename(male = Gender) %>%
+  na.omit() 
+```
+
+### Dplyr summarise()
+
+We will look at summary statistics by groups using `group_by()` and `summarise()`. First we group by the variable `male` and then we calculate mean and standard deviation of voter turnout. The syntax is: `summarise(new.variable = summary.statistic)`. With `summarise_each()` you can calculate descriptive statistics for multiple columns.
+
+```{r}
+# mean and standard deviation for Turnout by gender
+bes %>%
+  group_by(male) %>%
+  summarise(avg_turnout = mean(Turnout), sd_turnout = sd(Turnout))
+
+# mean for multiple columns using "summarise_each"
+bes %>% 
+  group_by(male) %>%
+  summarise_each(funs(mean), Turnout, Vote2001, Age, LeftrightSelf, 
+                 CivicDutyIndex, polinfoindex)
+```
+
+### Regression with a binary dependent variable
+
+We use the `glm()` function to estimate a logistic regression. The syntax is familiar from `lm()` and `plm()`. "glm" stands for generalized linear models and can be used to estimate many different models. The argument `family = binomial(link = "logit")` tells glm that we have a binary dependent variable that our link function is the cumulative logistic function.
+
+```{r}
+# logit model
+model1 <- glm(Turnout ~ Income + polinfoindex + male + edu15 + edu17 + edu18 + 
+                edu19plus + in_school + in_uni, family = binomial(link = "logit"),
+              data = bes)
+
+# regression output
+screenreg(model1)
+```
+
+### Predicted Probabilities and Predictive Power
+To assess the predictive power of our model we will check the percentage of cases that it correctly predicts. If we look at the mean of Turnout we will see that is 0.74. That means 74% of the respondents said that they turned out to vote. If you predict for every respondent that they voted, you will be right for 74% of the people. That is the naive guess and the benchmark for our model. If we predict more than 74% of cases correctly our model adds value.
+
+Below we will estimate predicted probabilities for each observation. That is, the probability our model assigns that a respondent will turn out to vote for every person in our data. To do so we use the `predict()` function. Type `help(predict.glm)` for information on all arguments. We use: `predict(model.name, type = "response")`. The first argument is the glm object (our model name) and the second specifies that we want predicted probabilities.
+
+```{r}
+# predicted probabilities for all respondents
+predicted.probabilities <- predict(model1, type = "response")
+```
+
+Now that we have assigned probabilities to people turning out, we have to translate those into outcomes. Turnout is binary. A straightforward way, would be to say: We predict that all people with a predicted probability above 50% vote and all with predicted probabilities below or equal to 50% abstain. We specify this threshold below.
+
+```{r}
+# threshold to translate predicted probabilities into outcomes
+threshold <- .5 
+```
+
+We create a new variable `expected.values` that is 1 if our predicted probability (`predicted.probabilites`) is larger than 0.5 and 0 otherwise. This is easily done with the `ifelse()` function. The syntax is as follows:
+
+`ifelse( condition, what to do if condition is true, what to do if condition is false)`
+
+```{r}
+# set prediction to 1 if predicted probability is larger than 0.5 and put 0 otherwise
+expected.values <- ifelse(predicted.probabilities > threshold, yes = 1, no = 0)
+```
+
+All we have to do now is to compare our expected values of turnout against the actually observed values of turnout. 
+
+We proceed by producing a table of predictions against actual outcomes. With that we will calculate the percentage of correctly predicted cases and compare that to the naive guess. We have the actually observed cases in our dependent variable (`Turnout`). The table is just a frequency table. The percentage of correctly predicted cases is simply the sum of correctly predicted cases over the number of cases. 
+
+```{r}
+ # actually observed outcomes
+observed <- bes$Turnout
+
+# putting observed outcomes and predicted outcomes into a table
+outcome.table <- table(observed,expected.values)
+outcome.table
+
+# correctly predicted cases:
+# (correct negatives + correct positives) / total number of outcomes
+correctly.predicted <- (outcome.table[1,1] + outcome.table[2,2]) / sum(outcome.table)
+correctly.predicted
+
+# comparing rate of correctly predicted to naive guess
+mean(bes$Turnout)
+```
+
+You can see that our model outperforms the naive guess slightly. The more lopsided the distribution of your binary dependent variable, the harder it is to build a successful model.
+
+### Joint hypothesis testing
+
+We add more explanatory variables to our model: `Influence` and `Age`. `Influence` corresponds to a theory we want to test while `Age` is a socio-economic control variable.
+
+
+
+```{r}
+# esimate the new model 2 including Influence and Age
+model2 <- glm(Turnout ~ Income + polinfoindex + Influence + male + Age + 
+                edu15 + edu17 + edu18 + edu19plus + in_school + in_uni, 
+              family = binomial(link = "logit"), data = bes)
+
+# regression table comparing model 1 and model 2
+screenreg( list(model1, model2) )
+```
+
+
+
+We will test if model 2 does better at predicting turnout than model 1. We use the likelihood ratio test. We use the `lmtest` package to test whether that difference is statistically significant using the `lrtest()` function. The syntax is the following:
+
+`lrtest(model with less variables, model with more variables)`
+
+```{r}
+# the likelihood ratio test
+lrtest(model1, model2)
+
+# Akaike's Information Criterion
+AIC(model1, model2)
+
+# Bayesian Infromation Criterion
+BIC(model1, model2) 
+```
+
+
+
+### Substantial interpretation
+
+Due to the functional form of the cumulative logistic function, the effect of a change in an independent variable depends on the level of the independent variable, i.e. they are  not constant. Interpretation is nonetheless easily accomplished using Zelig. We pick meaningful scenarios and predict the probability that a person will vote based on the scenarios. First, we re-estimate model 2 using zelig.
+
+```{r}
+# re-estimate model 2 using Zelig
+z.m2 <- zelig(Turnout ~ Income + polinfoindex + Influence + male + Age + edu15 + 
+                edu17 + edu18 + edu19plus + in_school + in_uni, model = "logit", 
+              data = bes, cite = FALSE)
+```
+
+What are meaningful scenarios? A meaningful scenario is a set of covariate values that corresponds to some case that is interesting in reality. For example, you may want to compare a women with 18 years of education to a man with 18 years of education while keeping all other variables at their means, medians or modes.
+
+We set binary variables to their modes, ordinally scaled variables to their medians and interval scaled variables to their means. By doing so for all variables except education and gender, we compare the average women with 18 years of education to the average man with 18 years of education. 
+
+```{r}
+# average man with 18 years of education
+x.male.18edu <- setx(z.m2, male = 1, edu18 = 1, Income = mean(bes$Income), 
+                     polinfoindex = mean(bes$polinfoindex), Influence = mean(bes$Influence),  
+                     Age = mean(bes$Age), edu15 = 0, edu17 = 0,  edu19plus = 0, 
+                     in_school = 0, in_uni = 0)
+
+# check covariate values (if you have missings here, the simulation will not work)
+t(x.male.18edu$values) 
+
+# average woman with 18 years of education
+x.female.18edu <- setx(z.m2, male = 0, edu18 = 1, Income = mean(bes$Income), 
+                       polinfoindex = mean(bes$polinfoindex), Influence = mean(bes$Influence),  
+                       Age = mean(bes$Age), edu15 = 0, edu17 = 0,  edu19plus = 0,
+                       in_school = 0, in_uni = 0)
+
+# check covariate values (if you have missings here, the simulation will not work)
+t(x.female.18edu$values)
+```
+
+Note: Do not worry about the `t()` around the covariate vectors. This simply transposes the vector so that it is printed horizontally instead of vertically.
+
+You see that the only difference between the covariate values in the two scenarios is gender. Therefore, we can compare a women and a man that are identical in all other attributes in our model. This is what keeping other variables constant means.
+
+Now all we have to do is simulate and compare the results.
+
+```{r, , fig.width=13, fig.height=11}
+# make simulation replicable, the values in set.seed() do not matter
+set.seed(123)
+
+# simulate with our two scenarios
+s.out <- sim(z.m2, x = x.female.18edu, x1 = x.male.18edu)
+
+# outcomes, check especially first differences
+summary(s.out)
+
+plot(s.out)
+```
+
+
+
+Our next step will be to compare two groups like men and women while varying another continuous variable from lowest to highest. We use income here. So, we set a sequence for income, vary gender and keep every other variable constant at its appropriate measure of central tendency.
+
+```{r}
+# women with income levels from lowest to highest (notice we put education to the mode)
+x.fem <- setx(z.m2, male = 0, Income = 1:13, polinfoindex = mean(bes$polinfoindex), 
+              Influence = mean(bes$Influence), Age = mean(bes$Age), 
+              edu15 = 1, edu17 = 0, edu18 = 0, edu19plus = 0, in_school = 0, in_uni = 0)
+
+# men with income levels from lowest to highest (notice we put education to the mode)
+x.mal <- setx(z.m2, male = 1, Income = 1:13, polinfoindex = mean(bes$polinfoindex), 
+              Influence = mean(bes$Influence), Age = mean(bes$Age), 
+              edu15 = 1, edu17 = 0, edu18 = 0, edu19plus = 0, in_school = 0, in_uni = 0)
+```
+
+If you want to check the values we have set again this would work slightly different this time because we have set `Income` to a sequence. You will see the values that you have set if you type `names(x.fem)` and `names(x.mal`).
+
+```{r}
+# simulation
+s.out2 <- sim(z.m2, x = x.fem, x1 = x.mal)
+```
+
+We will illustrate our results. The plot function here is slightly different as well. You use `plot.ci()` instead of the usual `plot()` function.
+
+```{r}
+# final plot
+plot.ci (s.out2, 
+         ci = 95,
+         xlab = "income", 
+         ylab = "predicted probability of Voting",
+         main = "effect of income by gender")
+
+# add labels manually
+text( x = 2, y = .75, labels = "women" )
+text( x = 7, y = .68, labels = "men" )
+```
+
+## BONUS: Maps
+
+Let's play with some maps. How about if I show you the location of my favourite coffee shops?
+
+```{r, eval=FALSE}
+install.packages("devtools")
+install.packages("ggmap")
+install.packages("leafletR")
+```
+
+```{r}
+library(ggmap)
+devtools::install_github("dill/emoGG")
+library(emoGG)
+
+sppmap <- qmap("WC1H 9QU", zoom = 16, maptype="hybrid")
+coffee_shops <- data.frame(lat=c(51.526259,51.523253, 51.525874, 51.525748, 51.5243248, 51.525302),
+                           lon=c(-0.129560,-0.131100, -0.125719, -0.125088, -0.124673, -0.126386),
+                           name=c("Fleet River", "Lever & Bloom", "Fork", "Continental Stores", "Petit A", "Bloomsbury Coffee House"))
+sppmap + geom_point(data=coffee_shops, aes(x=coffee_shops$lon, y=coffee_shops$lat, colour=name), size=3)
+
+
+## We can also use emojis!!
+
+sppmap + geom_emoji(data=coffee_shops, aes(x=coffee_shops$lon, y=coffee_shops$lat, colour=name), emoji="2615")
+```
+With the following code you can plot an interactive map
+
+```{r, eval=FALSE}
+library(leafletR)
+
+q.dat <- toGeoJSON(data = coffee_shops, dest=tempdir(), name="coffee")
+q.style <- styleSingle(col=2, lwd=1, alpha=1)
+q.map <- leaflet(data = q.dat, base.map = "tls", popup = "name", dest=tempdir(), controls=c("all"), incl.data = TRUE, title = "Javier's favourite coffee shops", style=q.style, size = c(500,500))
+q.map
+```

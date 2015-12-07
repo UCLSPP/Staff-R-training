@@ -1,0 +1,417 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>R Resources | UCL SPP Staff R training sessions</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.3.0">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+    
+        <link rel="stylesheet" href="./styles/website.css">
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="./optional/linear_regression.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="4" data-basepath="." data-revision="Mon Dec 07 2015 22:19:07 GMT+0000 (GMT)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="week1/index.html">
+            
+                
+                    <a href="./week1/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Introduction to R, OLS, data manipulation and basic visualisations
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="week1/seminar1.html">
+            
+                
+                    <a href="./week1/seminar1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Seminar
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="week2/index.html">
+            
+                
+                    <a href="./week2/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Panel data models, logit, further data manipulation and visualisation
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="week2/seminar2.html">
+            
+                
+                    <a href="./week2/seminar2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Seminar
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="optional/index.html">
+            
+                
+                    <a href="./optional/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Optional Material
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="optional/clt.html">
+            
+                
+                    <a href="./optional/clt.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Central Limit Theorem
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="optional/linear_regression.html">
+            
+                
+                    <a href="./optional/linear_regression.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Linear Regression
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="4" data-path="resources.html">
+            
+                
+                    <a href="./resources.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        R Resources
+                    </a>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >UCL SPP Staff R training sessions</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="r-resources">R Resources</h2>
+<h4 id="downloading-r-and-rstudio">Downloading R and RStudio</h4>
+<p>Install R and RStudio on your computer by downloading them from the following sources:</p>
+<ul>
+<li>Download R from <a href="https://cran.r-project.org" target="_blank">The Comprehensive R Archive Network (CRAN)</a></li>
+<li>Download RStudio from <a href="https://www.rstudio.com" target="_blank">RStudio.com</a></li>
+</ul>
+<h4 id="r-on-ucl-computers">R on UCL Computers</h4>
+<ul>
+<li><a href="faq/ucl_r.md">Running R on on UCL Computers</a></li>
+</ul>
+<h4 id="online-learning">Online Learning</h4>
+<ul>
+<li><a href="https://www.datacamp.com/swirl-r-tutorial" target="_blank">DataCamp</a>. Excellent interactive tutorial if you&apos;ve never used R before.</li>
+<li><a href="http://www.lynda.com" target="_blank">Lynda</a>. UCL has a subscription to <a href="http://www.lynda.com" target="_blank">Lynda</a> which gives you free access to over 3000 courses including these courses on R:<ul>
+<li><a href="http://www.lynda.com/R-tutorials/Up-Running-R/120612-2.html" target="_blank">Up and Running with R</a></li>
+<li><a href="http://www.lynda.com/R-tutorials/R-Statistics-Essential-Training/142447-2.html" target="_blank">R Statistics Essential Training</a></li>
+<li><a href="http://www.lynda.com/R-tutorials/Code-Clinic-R/372541-2.html" target="_blank">Code Clinic: R</a></li>
+</ul>
+</li>
+<li><a href="http://tryr.codeschool.com" target="_blank">Try R</a>. An interactive tutorial from Code School that walks you through the basics of R.</li>
+<li><a href="http://www.ats.ucla.edu/stat/r" target="_blank">Institute for Digital Research and Education, UCLA</a>. Tutorials, examples, and datasets from IDRE at UCLA.</li>
+<li><a href="http://dss.princeton.edu/training" target="_blank">Data &amp; Statistical Services, Princeton</a>. Data analysis tutorials on R from Princeton.</li>
+<li><a href="http://www.cyclismo.org/tutorial/R" target="_blank">R Tutorial from University of Georgia</a>. Another good tutorial with plenty of examples.</li>
+<li><a href="https://www.openintro.org/stat/labs.php?stat_lab_software=R" target="_blank">OpenIntro</a>. Open-source courseware with R tutorials and datasets.</li>
+<li><a href="https://fishr.wordpress.com/ifar/" target="_blank">Fish-R</a>. Course material from Introductory Fisheries Analysis with R.</li>
+<li><a href="http://stcorp.nl/R_course/" target="_blank">Introductory Course from Science &amp; Technology Corp</a>. Collection of tutorials on R, RStudio, dplyr, and ggplot2</li>
+<li><a href="http://www.brodrigues.co/2015/01/12/introduction-to-programming-econometrics-with-r" target="_blank">Introduction to programming econometrics with R</a>. Downloadable book and online tutorial.</li>
+<li><a href="https://ramnathv.github.io/pycon2014-r" target="_blank">Introduction to R</a>. Notes from R Introductory workshop.</li>
+<li><a href="http://josephncohen.info/teaching/graduate-advanced-analytics/" target="_blank">Graduate Advanced Analytics</a>. Course content from City University of New York.</li>
+<li><a href="http://www.econ.uiuc.edu/~econ508" target="_blank">Applied Econometrics</a>. Course website from University of Illinois with several R examples and datasets.</li>
+<li><a href="https://stat545-ubc.github.io/index.html" target="_blank">Data wrangling, exploration, and analysis with R</a>. Content from UBC&apos;s course on statistics focused on data exploration, analysis and visualizations.</li>
+<li><a href="https://www3.nd.edu/~steve/computing_with_data_2014" target="_blank">Computing with Data Seminar</a>. Short course in advanced R programming from University of Notre Dame.</li>
+</ul>
+<h4 id="graphics-and-visualizations">Graphics and Visualizations</h4>
+<ul>
+<li><a href="http://shinyapps.org/apps/RGraphCompendium" target="_blank">A Compendium of Clean Graphs in R</a></li>
+<li><a href="http://www.scoop.it/t/r-for-journalists" target="_blank">R for Journalists</a></li>
+<li><a href="http://spatial.ly" target="_blank">spatial.ly - Advanced Visualizations, Analysis and Resources from James Cheshire</a></li>
+<li><a href="https://www.datacamp.com/courses/ggvis-data-visualization-r-tutorial" target="_blank">Data Visualization in R with ggvis (from DataCamp)</a></li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/05/ggplot2-cheatsheet.pdf" target="_blank">Data Visualization Cheat Sheet (pdf)</a></li>
+</ul>
+<h4 id="documentation">Documentation</h4>
+<ul>
+<li><a href="https://stat.ethz.ch/R-manual/R-devel/doc/html/index.html" target="_blank">Manuals, Reference and Miscellaneous Material</a></li>
+<li>Packages. There are numerous online resources where you can get documentation for R packages. While you can always use Google to look for help, these sources offer easy access to documentation for nearly every R package available.<ul>
+<li><a href="https://stat.ethz.ch/R-manual/R-devel/doc/html/packages.html" target="_blank">Packages in the standard library (CRAN)</a></li>
+<li><a href="https://cran.r-project.org/web/packages/" target="_blank">Contributed Packages (CRAN)</a></li>
+<li><a href="http://www.inside-r.org/packages" target="_blank">inside-R Package Reference</a></li>
+<li><a href="http://www.rdocumentation.org" target="_blank">Rdocumentation.org</a></li>
+<li><a href="http://rpackages.ianhowson.com" target="_blank">R Packages by Ian Howson</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="other-resources">Other Resources</h4>
+<ul>
+<li><a href="http://www.statmethods.net" target="_blank">Quick-R</a></li>
+<li><a href="http://adv-r.had.co.nz/Vocabulary.html" target="_blank">R Vocabulary</a></li>
+<li><a href="http://adv-r.had.co.nz" target="_blank">Advanced R</a></li>
+<li><a href="http://www.johndcook.com/blog/r_language_for_programmers" target="_blank">R language for programmers</a></li>
+<li><a href="http://hyperpolyglot.org/numerical-analysis" target="_blank">Numerical Analysis &amp; Statistics: MATLAB, R, NumPy</a></li>
+<li><a href="https://cran.r-project.org/doc/contrib/de_Jonge+van_der_Loo-Introduction_to_data_cleaning_with_R.pdf" target="_blank">An introduction to data cleaning with R (pdf)</a></li>
+<li><a href="http://www.dataschool.io/dplyr-tutorial-for-faster-data-manipulation-in-r" target="_blank">Hands-on dplyr tutorial</a></li>
+<li><a href="https://www.rstudio.com/resources/cheatsheets" target="_blank">Cheetheets from RStudio</a><ul>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf" target="_blank">Data Wrangling with dplyr and tidyr (pdf)</a></li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/05/ggplot2-cheatsheet.pdf" target="_blank">Data Visualization Cheat Sheet (pdf)</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="r-humor">R Humor</h4>
+<p>Collection of useful (and sometimes funny) tips on R.</p>
+<ul>
+<li><a href="http://arrgh.tim-smith.us" target="_blank">aRrgh: a newcomer&#x2019;s (angry) guide to R</a></li>
+<li><a href="http://www.talyarkoni.org/blog/2012/06/08/r-the-master-troll-of-statistical-languages" target="_blank">R, the master troll of statistical languages</a></li>
+<li><a href="http://www.burns-stat.com/pages/Tutor/R_inferno.pdf" target="_blank">The R Inferno (pdf)</a></li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./optional/linear_regression.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Linear Regression"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

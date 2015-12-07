@@ -1,0 +1,1169 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Seminar | UCL SPP Staff R training sessions</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.3.0">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+        <link rel="stylesheet" href="../styles/website.css">
+    
+
+        
+    
+    
+    <link rel="next" href="../optional/index.html" />
+    
+    
+    <link rel="prev" href="../week2/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="Mon Dec 07 2015 22:19:07 GMT+0000 (GMT)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="week1/index.html">
+            
+                
+                    <a href="../week1/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Introduction to R, OLS, data manipulation and basic visualisations
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="week1/seminar1.html">
+            
+                
+                    <a href="../week1/seminar1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Seminar
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="week2/index.html">
+            
+                
+                    <a href="../week2/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Panel data models, logit, further data manipulation and visualisation
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1" data-path="week2/seminar2.html">
+            
+                
+                    <a href="../week2/seminar2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Seminar
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="optional/index.html">
+            
+                
+                    <a href="../optional/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Optional Material
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="optional/clt.html">
+            
+                
+                    <a href="../optional/clt.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Central Limit Theorem
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="optional/linear_regression.html">
+            
+                
+                    <a href="../optional/linear_regression.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Linear Regression
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="resources.html">
+            
+                
+                    <a href="../resources.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        R Resources
+                    </a>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >UCL SPP Staff R training sessions</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="2-panel-data-models-logit-further-data-manipulation-and-visualisation">2. Panel data models, logit, further data manipulation and visualisation</h2>
+<h3 id="2-1-seminar">2.1 Seminar</h3>
+<h1 id="r-training-for-spp-staff-session-2">R training for SPP staff (session 2)</h1>
+<h4 id="javier-sajuria">Javier Sajuria</h4>
+<h4 id="9-december-2015">9 December 2015</h4>
+<h2 id="preliminary-steps">Preliminary steps</h2>
+<p>Remember to set up your working directory and open a new R script</p>
+<pre><code>setwd(&quot;WD&quot;)
+</code></pre><p>Now, let&apos;s load the relevant packages. If you haven&apos;t installed them last week check the website to get the right commands:</p>
+<pre><code class="lang-r"><span class="hljs-keyword">library</span>(foreign) 
+<span class="hljs-keyword">library</span>(car)
+<span class="hljs-keyword">library</span>(readxl) 
+<span class="hljs-keyword">library</span>(texreg)
+<span class="hljs-keyword">library</span>(Zelig)
+<span class="hljs-keyword">library</span>(sandwich)
+<span class="hljs-keyword">library</span>(plm)
+<span class="hljs-keyword">library</span>(ggplot2)
+<span class="hljs-keyword">library</span>(tidyr)
+<span class="hljs-keyword">library</span>(lmtest)
+<span class="hljs-keyword">library</span>(dplyr)
+</code></pre>
+<h2 id="panel-data">Panel data</h2>
+<p>We will use the WDI dataset (<code>wdi.data</code>).</p>
+<pre><code class="lang-r">wdi &lt;- read.csv(<span class="hljs-string">&quot;https://raw.githubusercontent.com/UCLSPP/Staff-R-training/master/Week1/wdi.csv&quot;</span>)
+</code></pre>
+<p>The function used to fit the panel data models is plm, and contains (at least) the following parameters:</p>
+<pre><code>plm(formula, data, index=c(unit, time), effect = c(&quot;individual&quot;,&quot;time&quot;,&quot;twoways&quot;),
+    model = c(&quot;within&quot;,&quot;random&quot;))
+</code></pre><p>The arguments are:</p>
+<table>
+<thead>
+<tr>
+<th><em>Argument</em></th>
+<th><em>Description</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>formula</code></td>
+<td><code>DV ~ IV</code></td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td>The dataset that contains our variables</td>
+</tr>
+<tr>
+<td><code>index</code></td>
+<td>Here we specify which variable contains the units and which contains the time</td>
+</tr>
+<tr>
+<td><code>effect</code></td>
+<td>This argument defines whether we are estimating the individual fixed effects, the time fixed effect, or both (<code>&quot;twoways&quot;</code>)</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td>Fixed effects (<code>&quot;within&quot;</code>) or random effects (<code>&quot;random&quot;</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fixed-effects">Fixed effects:</h3>
+<pre><code class="lang-r"><span class="hljs-comment"># We first estimate the OLS model, as a baseline</span>
+
+ols &lt;- lm(MaternalMortality ~ SafeWaterAccess + HealthExpenditure + PregnantWomenWithAnemia, data = wdi)
+summary(ols)
+</code></pre>
+<pre><code>Call:
+lm(formula = MaternalMortality ~ SafeWaterAccess + HealthExpenditure + 
+    PregnantWomenWithAnemia, data = wdi)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-482.57  -79.98   -3.27   53.53 1878.73 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)             502.7318    35.9275   13.99   &lt;2e-16 ***
+SafeWaterAccess         -10.0763     0.2660  -37.88   &lt;2e-16 ***
+HealthExpenditure        24.0685     1.6357   14.71   &lt;2e-16 ***
+PregnantWomenWithAnemia  11.7967     0.4105   28.74   &lt;2e-16 ***
+---
+Signif. codes:  0 &apos;***&apos; 0.001 &apos;**&apos; 0.01 &apos;*&apos; 0.05 &apos;.&apos; 0.1 &apos; &apos; 1
+
+Residual standard error: 191.2 on 2930 degrees of freedom
+  (7818 observations deleted due to missingness)
+Multiple R-squared:  0.6757,    Adjusted R-squared:  0.6754 
+F-statistic:  2035 on 3 and 2930 DF,  p-value: &lt; 2.2e-16
+</code></pre><pre><code class="lang-r">fixed_effects &lt;- plm(MaternalMortality ~ SafeWaterAccess + HealthExpenditure + PregnantWomenWithAnemia, 
+                     data = wdi, 
+                     index = c(<span class="hljs-string">&quot;CountryCode&quot;</span>, <span class="hljs-string">&quot;Year&quot;</span>), 
+                     model = <span class="hljs-string">&quot;within&quot;</span>, 
+                     effect = <span class="hljs-string">&quot;individual&quot;</span>)
+summary(fixed_effects)
+</code></pre>
+<pre><code>Oneway (individual) effect Within Model
+
+Call:
+plm(formula = MaternalMortality ~ SafeWaterAccess + HealthExpenditure + 
+    PregnantWomenWithAnemia, data = wdi, effect = &quot;individual&quot;, 
+    model = &quot;within&quot;, index = c(&quot;CountryCode&quot;, &quot;Year&quot;))
+
+Unbalanced Panel: n=175, T=7-17, N=2934
+
+Residuals :
+    Min.  1st Qu.   Median  3rd Qu.     Max. 
+-563.000  -15.300    0.596   13.300  534.000 
+
+Coefficients :
+                        Estimate Std. Error  t-value  Pr(&gt;|t|)    
+SafeWaterAccess         -8.79494    0.40917 -21.4948 &lt; 2.2e-16 ***
+HealthExpenditure       -4.16778    1.22865  -3.3922 0.0007032 ***
+PregnantWomenWithAnemia  5.91744    0.53636  11.0325 &lt; 2.2e-16 ***
+---
+Signif. codes:  0 &apos;***&apos; 0.001 &apos;**&apos; 0.01 &apos;*&apos; 0.05 &apos;.&apos; 0.1 &apos; &apos; 1
+
+Total Sum of Squares:    15806000
+Residual Sum of Squares: 10147000
+R-Squared      :  0.35799 
+      Adj. R-Squared :  0.33627 
+F-statistic: 512.248 on 3 and 2756 DF, p-value: &lt; 2.22e-16
+</code></pre><pre><code class="lang-r">fixef(fixed_effects)
+</code></pre>
+<pre><code>      AFG       AGO       ALB       ARE       ARG       ARM       AUS 
+ 895.2281  919.8473  752.9895  722.6399  766.6782  746.9677  778.0787 
+      AUT       AZE       BDI       BEL       BEN       BFA       BGD 
+ 779.1715  544.2196 1336.1258  787.0830  742.5123  754.8887  753.3688 
+      BGR       BHR       BHS       BIH       BLR       BLZ       BOL 
+ 755.1332  682.0568  748.2338  737.8651  762.1208  658.4077  840.5761 
+      BRA       BRB       BTN       BWA       CAF       CAN       CHE 
+ 728.1559  730.6359  868.5490  912.1539 1372.1780  793.7236  781.3137 
+      CHL       CHN       CIV       CMR       COG       COL       COM 
+ 750.4381  666.6156 1084.8413  997.8618  865.5965  677.4029 1031.6335 
+      CPV       CRI       CUB       CYP       CZE       DEU       DJI 
+ 557.8910  741.0169  688.4347  733.1411  758.7518  788.6171  910.2829 
+      DNK       DZA       ECU       EGY       ERI       ESP       EST 
+ 787.8860  749.5304  622.9354  745.5925  939.5437  771.3776  752.8397 
+      ETH       FIN       FJI       FRA       FSM       GAB       GBR 
+ 921.9012  780.0043  621.0829  787.6041  795.9626  789.1134  797.9996 
+      GEO       GHA       GIN       GMB       GNB       GNQ       GRC 
+ 711.1553  725.0188 1093.2592 1240.4976  930.4182  701.4041  757.0488 
+      GRD       GTM       GUY       HND       HRV       HTI       HUN 
+ 689.2499  716.9809  800.3775  749.5464  734.6161  722.1451  751.3423 
+      IDN       IND       IRL       IRN       IRQ       ISL       ISR 
+ 725.4980  753.4940  749.1911  729.9931  594.8984  787.2447  779.3677 
+      ITA       JAM       JOR       JPN       KAZ       KEN       KGZ 
+ 767.9238  726.0583  779.9979  740.0963  704.9217  924.2111  619.6080 
+      KHM       KIR       KOR       KWT       LAO       LBN       LBR 
+ 519.6146  519.7549  723.7069  731.2665  697.6801  697.6807 1343.4727 
+      LBY       LCA       LKA       LSO       LTU       LUX       LVA 
+ 464.0917  697.1185  614.0690 1174.6033  694.7585  779.0533  760.2860 
+      MAR       MDA       MDG       MDV       MEX       MKD       MLI 
+ 713.8166  660.3864  650.9510  728.6406  718.3071  763.1470  873.6898 
+      MLT       MMR       MNE       MNG       MOZ       MRT       MUS 
+ 785.7035  662.5322  734.8331  509.0467  941.7322  905.1176  722.7376 
+      MWI       MYS       NAM       NER       NGA       NIC       NLD 
+1130.1263  714.8234  875.2018  825.4572 1184.4262  778.1611  787.6718 
+      NOR       NPL       NZL       OMN       PAK       PAN       PER 
+ 786.9385  907.4428  797.1922  566.9183  791.5726  722.0095  673.4769 
+      PHL       PNG       POL       PRT       PRY       QAT       ROM 
+ 666.0577  387.6952  719.2244  763.5802  671.3381  726.5799  677.4151 
+      RUS       RWA       SAU       SDN       SEN       SGP       SLB 
+ 760.4371 1275.2134  615.8655  789.5044  704.0704  744.3194  680.0273 
+      SLE       SLV       SRB       STP       SUR       SVK       SVN 
+2437.3338  649.7161  746.0473  659.5402  833.1217  750.5592  756.9190 
+      SWE       SWZ       SYR       TCD       TGO       THA       TJK 
+ 783.3692  875.6141  662.4981 1343.7694  609.5269  682.0908  438.0624 
+      TKM       TMP       TON       TTO       TUN       TUR       TZA 
+ 400.8341  862.0982  821.1880  701.5059  724.0002  729.9296  913.3639 
+      UGA       UKR       URY       USA       UZB       VCT       VEN 
+ 869.9022  758.7593  745.0221  862.0418  593.4577  698.8435  733.5592 
+      VNM       VUT       WSM       YEM       ZAF       ZAR       ZMB 
+ 617.7027  615.2649  753.9982  733.3686  722.0298  954.9441  707.2729 
+</code></pre><pre><code class="lang-r">screenreg(list(ols, fixed_effects))
+</code></pre>
+<pre><code>=================================================
+                         Model 1      Model 2    
+-------------------------------------------------
+(Intercept)               502.73 ***             
+                          (35.93)                
+SafeWaterAccess           -10.08 ***    -8.79 ***
+                           (0.27)       (0.41)   
+HealthExpenditure          24.07 ***    -4.17 ***
+                           (1.64)       (1.23)   
+PregnantWomenWithAnemia    11.80 ***     5.92 ***
+                           (0.41)       (0.54)   
+-------------------------------------------------
+R^2                         0.68         0.36    
+Adj. R^2                    0.68         0.34    
+Num. obs.                2934         2934       
+RMSE                      191.16                 
+=================================================
+*** p &lt; 0.001, ** p &lt; 0.01, * p &lt; 0.05
+</code></pre><p>. The <code>plmtest()</code> function can test for the presence for individual or time effects.</p>
+<pre><code class="lang-r">plmtest(fixed_effects, effect=<span class="hljs-string">&quot;individual&quot;</span>)
+</code></pre>
+<pre><code>    Lagrange Multiplier Test - (Honda)
+
+data:  MaternalMortality ~ SafeWaterAccess + HealthExpenditure + PregnantWomenWithAnemia
+normal = 137.93, p-value &lt; 2.2e-16
+alternative hypothesis: significant effects
+</code></pre><p>The null hypothesis for <code>plmtest()</code> is that there are no individual effects.</p>
+<p>We can model these time fixed effects using the <code>effect = &quot;time&quot;</code> argument in <code>plm()</code>.</p>
+<pre><code class="lang-r">time_effects &lt;- plm(MaternalMortality ~ SafeWaterAccess + HealthExpenditure + PregnantWomenWithAnemia , 
+                    data = wdi, 
+                    index = c(<span class="hljs-string">&quot;CountryCode&quot;</span>, <span class="hljs-string">&quot;Year&quot;</span>), 
+                    model = <span class="hljs-string">&quot;within&quot;</span>, 
+                    effect = <span class="hljs-string">&quot;time&quot;</span>)
+summary(time_effects)
+</code></pre>
+<pre><code>Oneway (time) effect Within Model
+
+Call:
+plm(formula = MaternalMortality ~ SafeWaterAccess + HealthExpenditure + 
+    PregnantWomenWithAnemia, data = wdi, effect = &quot;time&quot;, model = &quot;within&quot;, 
+    index = c(&quot;CountryCode&quot;, &quot;Year&quot;))
+
+Unbalanced Panel: n=175, T=7-17, N=2934
+
+Residuals :
+   Min. 1st Qu.  Median 3rd Qu.    Max. 
+-486.00  -80.10   -3.21   51.60 1890.00 
+
+Coefficients :
+                         Estimate Std. Error t-value  Pr(&gt;|t|)    
+SafeWaterAccess         -10.07778    0.26654 -37.810 &lt; 2.2e-16 ***
+HealthExpenditure        23.86712    1.64865  14.477 &lt; 2.2e-16 ***
+PregnantWomenWithAnemia  11.87103    0.41316  28.732 &lt; 2.2e-16 ***
+---
+Signif. codes:  0 &apos;***&apos; 0.001 &apos;**&apos; 0.01 &apos;*&apos; 0.05 &apos;.&apos; 0.1 &apos; &apos; 1
+
+Total Sum of Squares:    327280000
+Residual Sum of Squares: 106910000
+R-Squared      :  0.67334 
+      Adj. R-Squared :  0.66875 
+F-statistic: 2002.18 on 3 and 2914 DF, p-value: &lt; 2.22e-16
+</code></pre><pre><code class="lang-r">screenreg(list(ols, fixed_effects, time_effects))
+</code></pre>
+<pre><code>==============================================================
+                         Model 1      Model 2      Model 3    
+--------------------------------------------------------------
+(Intercept)               502.73 ***                          
+                          (35.93)                             
+SafeWaterAccess           -10.08 ***    -8.79 ***   -10.08 ***
+                           (0.27)       (0.41)       (0.27)   
+HealthExpenditure          24.07 ***    -4.17 ***    23.87 ***
+                           (1.64)       (1.23)       (1.65)   
+PregnantWomenWithAnemia    11.80 ***     5.92 ***    11.87 ***
+                           (0.41)       (0.54)       (0.41)   
+--------------------------------------------------------------
+R^2                         0.68         0.36         0.67    
+Adj. R^2                    0.68         0.34         0.67    
+Num. obs.                2934         2934         2934       
+RMSE                      191.16                              
+==============================================================
+*** p &lt; 0.001, ** p &lt; 0.01, * p &lt; 0.05
+</code></pre><p>Let&apos;s run the the Lagrange Multiplier test on the <code>time_effects</code> model again to see if indeed there are time effects in our model. Remeber, the null hypotheses for the test is that there are no time fixed effects.</p>
+<pre><code class="lang-r">plmtest(time_effects, effect=<span class="hljs-string">&quot;time&quot;</span>)
+</code></pre>
+<pre><code>    Lagrange Multiplier Test - time effects (Honda)
+
+data:  MaternalMortality ~ SafeWaterAccess + HealthExpenditure + PregnantWomenWithAnemia
+normal = -2.1755, p-value = 0.02959
+alternative hypothesis: significant effects
+</code></pre><p>The <em>p-value</em> tells us that we can reject the null hypothesis as there are indeed time fixed effects present.</p>
+<p>In order to control for both country AND time fixed effects, we need to estimate a model using the <code>effect = &quot;twoways&quot;</code> argument.</p>
+<pre><code class="lang-r">twoway_effects &lt;- plm(MaternalMortality ~ SafeWaterAccess + HealthExpenditure + PregnantWomenWithAnemia, 
+                      data = wdi, 
+                      index = c(<span class="hljs-string">&quot;CountryCode&quot;</span>, <span class="hljs-string">&quot;Year&quot;</span>), 
+                      model = <span class="hljs-string">&quot;within&quot;</span>, 
+                      effect = <span class="hljs-string">&quot;twoways&quot;</span>)
+summary(twoway_effects)
+</code></pre>
+<pre><code>Twoways effects Within Model
+
+Call:
+plm(formula = MaternalMortality ~ SafeWaterAccess + HealthExpenditure + 
+    PregnantWomenWithAnemia, data = wdi, effect = &quot;twoways&quot;, 
+    model = &quot;within&quot;, index = c(&quot;CountryCode&quot;, &quot;Year&quot;))
+
+Unbalanced Panel: n=175, T=7-17, N=2934
+
+Residuals :
+    Min.  1st Qu.   Median  3rd Qu.     Max. 
+-566.000  -16.500   -0.454   14.400  536.000 
+
+Coefficients :
+                        Estimate Std. Error  t-value  Pr(&gt;|t|)    
+SafeWaterAccess         -8.55480    0.43546 -19.6455 &lt; 2.2e-16 ***
+HealthExpenditure       -3.68403    1.29204  -2.8513  0.004386 ** 
+PregnantWomenWithAnemia  5.28353    0.68313   7.7343  1.45e-14 ***
+---
+Signif. codes:  0 &apos;***&apos; 0.001 &apos;**&apos; 0.01 &apos;*&apos; 0.05 &apos;.&apos; 0.1 &apos; &apos; 1
+
+Total Sum of Squares:    12164000
+Residual Sum of Squares: 10125000
+R-Squared      :  0.16761 
+      Adj. R-Squared :  0.15653 
+F-statistic: 183.906 on 3 and 2740 DF, p-value: &lt; 2.22e-16
+</code></pre><p>The results of all three models are shown below.</p>
+<pre><code class="lang-r">screenreg(list(fixed_effects, time_effects, twoway_effects), 
+          custom.model.names = c(<span class="hljs-string">&quot;Country Fixed Effects&quot;</span>, <span class="hljs-string">&quot;Time Fixed Effects&quot;</span>, <span class="hljs-string">&quot;Twoway Fixed Effects&quot;</span>))
+</code></pre>
+<pre><code>========================================================================================
+                         Country Fixed Effects  Time Fixed Effects  Twoway Fixed Effects
+----------------------------------------------------------------------------------------
+SafeWaterAccess            -8.79 ***             -10.08 ***           -8.55 ***         
+                           (0.41)                 (0.27)              (0.44)            
+HealthExpenditure          -4.17 ***              23.87 ***           -3.68 **          
+                           (1.23)                 (1.65)              (1.29)            
+PregnantWomenWithAnemia     5.92 ***              11.87 ***            5.28 ***         
+                           (0.54)                 (0.41)              (0.68)            
+----------------------------------------------------------------------------------------
+R^2                         0.36                   0.67                0.17             
+Adj. R^2                    0.34                   0.67                0.16             
+Num. obs.                2934                   2934                2934                
+========================================================================================
+*** p &lt; 0.001, ** p &lt; 0.01, * p &lt; 0.05
+</code></pre><h3 id="serial-correlation">Serial Correlation</h3>
+<p>We will test for serial correlation with Breusch-Godfrey test using <code>pbgtest()</code> and provide solutions for correcting it if necessary.</p>
+<pre><code class="lang-r">pbgtest(twoway_effects)
+</code></pre>
+<pre><code>    Breusch-Godfrey/Wooldridge test for serial correlation in panel
+    models
+
+data:  MaternalMortality ~ SafeWaterAccess + HealthExpenditure + PregnantWomenWithAnemia
+chisq = 2134.6, df = 7, p-value &lt; 2.2e-16
+alternative hypothesis: serial correlation in idiosyncratic errors
+</code></pre><p>The null hypothesis for the Breusch-Godfrey test is that there is no serial correlation. The <code>p-value</code> from the test tells us that we can reject the null hypothesis and confirms the presence of serial corrleation in our error term.</p>
+<p>We can correct for serial correlation using <code>coeftest()</code> similar to how we corrected for heteroskedastic errors. We&apos;ll use the <code>vcovHC()</code> function for obtaining a heteroskedasticity-consistent covariance matrix, but since we&apos;re interested in correcting for autocorrelation as well, we will specify <code>method = &quot;arellano&quot;</code> which corrects for both heteroskedasticity and autocorrelation.</p>
+<pre><code class="lang-r">twoway_effects_hac &lt;- coeftest(twoway_effects, vcov = vcovHC(twoway_effects, method = <span class="hljs-string">&quot;arellano&quot;</span>, type = <span class="hljs-string">&quot;HC3&quot;</span>))
+
+screenreg(list(twoway_effects, twoway_effects_hac),
+          custom.model.names = c(<span class="hljs-string">&quot;Twoway Fixed Effects&quot;</span>, <span class="hljs-string">&quot;Twoway Fixed Effects (HAC)&quot;</span>))
+</code></pre>
+<pre><code>=========================================================================
+                         Twoway Fixed Effects  Twoway Fixed Effects (HAC)
+-------------------------------------------------------------------------
+SafeWaterAccess            -8.55 ***           -8.55 ***                 
+                           (0.44)              (1.61)                    
+HealthExpenditure          -3.68 **            -3.68                     
+                           (1.29)              (5.88)                    
+PregnantWomenWithAnemia     5.28 ***            5.28 *                   
+                           (0.68)              (2.28)                    
+-------------------------------------------------------------------------
+R^2                         0.17                                         
+Adj. R^2                    0.16                                         
+Num. obs.                2934                                            
+=========================================================================
+*** p &lt; 0.001, ** p &lt; 0.01, * p &lt; 0.05
+</code></pre><p>We can see that with heteroskedasticity and autocorrelation consistent (HAC) standard errors, the percent of male population (10 - 29 yr old) is no longer a significant predictor in our model.</p>
+<h3 id="lagged-dependent-variables-ldv-and-dynamic-models">Lagged Dependent Variables (LDV) and Dynamic Models</h3>
+<p>The <code>lag()</code> function generates lagged dependent variables and has the following form:</p>
+<pre><code>lag(x, k)
+</code></pre><table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td>A vector or matrix of observations</td>
+</tr>
+<tr>
+<td><code>k</code></td>
+<td>Number of lags. Default is <code>1</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-r">ldv_model &lt;- 
+  plm(MaternalMortality ~ lag(MaternalMortality) + SafeWaterAccess + HealthExpenditure 
+      + PregnantWomenWithAnemia, 
+                      data = wdi, 
+                      index = c(<span class="hljs-string">&quot;CountryCode&quot;</span>, <span class="hljs-string">&quot;Year&quot;</span>), 
+                      model = <span class="hljs-string">&quot;within&quot;</span>, 
+                      effect = <span class="hljs-string">&quot;twoways&quot;</span>)
+summary(ldv_model)
+</code></pre>
+<pre><code>Twoways effects Within Model
+
+Call:
+plm(formula = MaternalMortality ~ lag(MaternalMortality) + SafeWaterAccess + 
+    HealthExpenditure + PregnantWomenWithAnemia, data = wdi, 
+    effect = &quot;twoways&quot;, model = &quot;within&quot;, index = c(&quot;CountryCode&quot;, 
+        &quot;Year&quot;))
+
+Unbalanced Panel: n=175, T=7-17, N=2934
+
+Residuals :
+    Min.  1st Qu.   Median  3rd Qu.     Max. 
+-81.9000  -1.7300   0.0802   2.0900  93.1000 
+
+Coefficients :
+                          Estimate Std. Error  t-value  Pr(&gt;|t|)    
+lag(MaternalMortality)   0.9677067  0.0028302 341.9212 &lt; 2.2e-16 ***
+SafeWaterAccess         -0.4353248  0.0700455  -6.2149 5.919e-10 ***
+HealthExpenditure       -0.2857421  0.1957745  -1.4595    0.1445    
+PregnantWomenWithAnemia -0.4721160  0.1047386  -4.5076 6.833e-06 ***
+---
+Signif. codes:  0 &apos;***&apos; 0.001 &apos;**&apos; 0.01 &apos;*&apos; 0.05 &apos;.&apos; 0.1 &apos; &apos; 1
+
+Total Sum of Squares:    12164000
+Residual Sum of Squares: 231780
+R-Squared      :  0.98094 
+      Adj. R-Squared :  0.91575 
+F-statistic: 35250.6 on 4 and 2739 DF, p-value: &lt; 2.22e-16
+</code></pre><h3 id="cross-sectional-dependence">Cross Sectional Dependence</h3>
+<p>We can check for cross sectional dependence using the Pesaran cross sectional dependence test or <code>pcdtest()</code>.</p>
+<pre><code class="lang-r">pcdtest(twoway_effects)
+</code></pre>
+<pre><code>    Pesaran CD test for cross-sectional dependence in panels
+
+data:  formula
+z = NaN, p-value = NA
+alternative hypothesis: cross-sectional dependence
+</code></pre><p>As we&apos;ve seen with other tests, the null hypothesis is that there is no cross sectional dependence. The p-value, however tells that there is indeed cross-sectional dependence and we need to correct it. There are two general approaches to correcting for cross sectional dependence.</p>
+<p><strong>Beck and Katz (1995) method or Panel Corrected Standard Errors (PCSE)</strong>: We can obtain Panel Corrected Standard Errors (PCSE) by first obtaining a robust variance-covariance matrix for panel models with the Beck and Katz (1995) method using the <code>vcovBK()</code> and passing it to the familiar <code>coeftest()</code> function.</p>
+<pre><code class="lang-r">twoway_effects_pcse &lt;- coeftest(twoway_effects, vcov = vcovBK(twoway_effects, type=<span class="hljs-string">&quot;HC3&quot;</span>, cluster = <span class="hljs-string">&quot;group&quot;</span>))
+</code></pre>
+<p>The results from PCSE are sensitive to the ratio between the number of time periods in the dataset (T) and the total number of observations (N). When we&apos;re dealing with large datasets (i.e. the T/N ratio is small), we use the Driscoll and Kraay method:</p>
+<p><strong>Driscoll and Kraay (1998) (SCC)</strong>:</p>
+<pre><code class="lang-r">twoway_effects_scc &lt;- coeftest(twoway_effects, vcov = vcovSCC(twoway_effects, type=<span class="hljs-string">&quot;HC3&quot;</span>, cluster = <span class="hljs-string">&quot;group&quot;</span>))
+</code></pre>
+<pre><code class="lang-r">screenreg(list(ols, fixed_effects, twoway_effects, ldv_model, twoway_effects_pcse, twoway_effects_scc), 
+          custom.model.names = c(<span class="hljs-string">&quot;Pooled&quot;</span>,<span class="hljs-string">&quot;Country Effects&quot;</span>, <span class="hljs-string">&quot;Twoway Fixed Effects&quot;</span>, <span class="hljs-string">&quot;LDV&quot;</span>, <span class="hljs-string">&quot;PCSE&quot;</span>, <span class="hljs-string">&quot;SCC&quot;</span>))
+</code></pre>
+<pre><code>==============================================================================================================
+                         Pooled       Country Effects  Twoway Fixed Effects  LDV          PCSE       SCC      
+--------------------------------------------------------------------------------------------------------------
+(Intercept)               502.73 ***                                                                          
+                          (35.93)                                                                             
+SafeWaterAccess           -10.08 ***    -8.79 ***        -8.55 ***             -0.44 ***  -8.55 ***  -8.55 ***
+                           (0.27)       (0.41)           (0.44)                (0.07)     (1.64)     (0.32)   
+HealthExpenditure          24.07 ***    -4.17 ***        -3.68 **              -0.29      -3.68      -3.68 ***
+                           (1.64)       (1.23)           (1.29)                (0.20)     (3.70)     (0.74)   
+PregnantWomenWithAnemia    11.80 ***     5.92 ***         5.28 ***             -0.47 ***   5.28 *     5.28 ***
+                           (0.41)       (0.54)           (0.68)                (0.10)     (2.43)     (0.46)   
+lag(MaternalMortality)                                                          0.97 ***                      
+                                                                               (0.00)                         
+--------------------------------------------------------------------------------------------------------------
+R^2                         0.68         0.36             0.17                  0.98                          
+Adj. R^2                    0.68         0.34             0.16                  0.92                          
+Num. obs.                2934         2934             2934                  2934                             
+RMSE                      191.16                                                                              
+==============================================================================================================
+*** p &lt; 0.001, ** p &lt; 0.01, * p &lt; 0.05
+</code></pre><h2 id="logistic-models">Logistic models</h2>
+<pre><code class="lang-r"><span class="hljs-comment"># clear environment</span>
+rm(list = ls())
+</code></pre>
+<h3 id="loading-data">Loading Data</h3>
+<p>We use a subset of the 2005 face-to-face British post election study to explain turnout. We drop missing values (missings are on the same observations for all variables). We also rename <code>Gender</code> to <code>male</code> because 1 stands for men.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># load British post election study</span>
+bes &lt;- read.dta(<span class="hljs-string">&quot;http://uclspp.github.io/PUBLG100/data/bes.dta&quot;</span>)
+head(bes)
+</code></pre>
+<pre><code>  cs_id Turnout Vote2001 Income Age Gender PartyID Influence Attention
+1     1       0        1      4  76      0       1         1         8
+2     2       1        1      5  32      1       0         3         8
+3     3       1       NA     NA  NA     NA      NA        NA        NA
+4     4       0        1      1  35      0       0         1         1
+5     5       1        1      7  56      1       0         1         9
+6     6       1        1      4  76      0       1         4         8
+  Telephone LeftrightSelf CivicDutyIndex polinfoindex edu15 edu16 edu17
+1         1             7             20            7     1     0     0
+2         1             6             15            5     0     1     0
+3        NA            NA             NA           NA    NA    NA    NA
+4         0             5             26            1     0     1     0
+5         1             9             16            7     0     0     1
+6         1             8             16            4     0     1     0
+  edu18 edu19plus in_school in_uni CivicDutyScores
+1     0         0         0      0      -0.6331136
+2     0         0         0      0       1.4794579
+3    NA        NA        NA     NA              NA
+4     0         0         0      0      -2.1466281
+5     0         0         0      0       1.0324940
+6     0         0         0      0       0.3658024
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># frequency table of voter turnout</span>
+table(bes$Turnout)
+</code></pre>
+<pre><code>   0    1 
+1079 3712 
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># rename Gender to male b/c 1 = male &amp; remove missings</span>
+bes &lt;- bes %&gt;%
+  rename(male = Gender) %&gt;%
+  na.omit()
+</code></pre>
+<h3 id="dplyr-summarise">Dplyr summarise()</h3>
+<p>We will look at summary statistics by groups using <code>group_by()</code> and <code>summarise()</code>. First we group by the variable <code>male</code> and then we calculate mean and standard deviation of voter turnout. The syntax is: <code>summarise(new.variable = summary.statistic)</code>. With <code>summarise_each()</code> you can calculate descriptive statistics for multiple columns.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># mean and standard deviation for Turnout by gender</span>
+bes %&gt;%
+  group_by(male) %&gt;%
+  summarise(avg_turnout = mean(Turnout), sd_turnout = sd(Turnout))
+</code></pre>
+<pre><code>Source: local data frame [2 x 3]
+
+  male avg_turnout sd_turnout
+1    0   0.7465517  0.4350791
+2    1   0.7332971  0.4423559
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># mean for multiple columns using &quot;summarise_each&quot;</span>
+bes %&gt;% 
+  group_by(male) %&gt;%
+  summarise_each(funs(mean), Turnout, Vote2001, Age, LeftrightSelf, 
+                 CivicDutyIndex, polinfoindex)
+</code></pre>
+<pre><code>Source: local data frame [2 x 7]
+
+  male   Turnout  Vote2001      Age LeftrightSelf CivicDutyIndex
+1    0 0.7465517 0.8400862 51.04914      5.397414       17.35216
+2    1 0.7332971 0.8365019 50.75394      5.409560       17.76697
+Variables not shown: polinfoindex (dbl)
+</code></pre><h3 id="regression-with-a-binary-dependent-variable">Regression with a binary dependent variable</h3>
+<p>We use the <code>glm()</code> function to estimate a logistic regression. The syntax is familiar from <code>lm()</code> and <code>plm()</code>. &quot;glm&quot; stands for generalized linear models and can be used to estimate many different models. The argument <code>family = binomial(link = &quot;logit&quot;)</code> tells glm that we have a binary dependent variable that our link function is the cumulative logistic function.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># logit model</span>
+model1 &lt;- glm(Turnout ~ Income + polinfoindex + male + edu15 + edu17 + edu18 + 
+                edu19plus + in_school + in_uni, family = binomial(link = <span class="hljs-string">&quot;logit&quot;</span>),
+              data = bes)
+
+<span class="hljs-comment"># regression output</span>
+screenreg(model1)
+</code></pre>
+<pre><code>============================
+                Model 1     
+----------------------------
+(Intercept)        -1.14 ***
+                   (0.15)   
+Income              0.03    
+                   (0.02)   
+polinfoindex        0.38 ***
+                   (0.02)   
+male               -0.35 ***
+                   (0.08)   
+edu15               0.38 ***
+                   (0.10)   
+edu17               0.46 ** 
+                   (0.15)   
+edu18               0.11    
+                   (0.14)   
+edu19plus           0.24 *  
+                   (0.12)   
+in_school           0.15    
+                   (0.39)   
+in_uni             -0.72 ** 
+                   (0.25)   
+----------------------------
+AIC              4401.20    
+BIC              4464.53    
+Log Likelihood  -2190.60    
+Deviance         4381.20    
+Num. obs.        4161       
+============================
+*** p &lt; 0.001, ** p &lt; 0.01, * p &lt; 0.05
+</code></pre><h3 id="predicted-probabilities-and-predictive-power">Predicted Probabilities and Predictive Power</h3>
+<p>To assess the predictive power of our model we will check the percentage of cases that it correctly predicts. If we look at the mean of Turnout we will see that is 0.74. That means 74% of the respondents said that they turned out to vote. If you predict for every respondent that they voted, you will be right for 74% of the people. That is the naive guess and the benchmark for our model. If we predict more than 74% of cases correctly our model adds value.</p>
+<p>Below we will estimate predicted probabilities for each observation. That is, the probability our model assigns that a respondent will turn out to vote for every person in our data. To do so we use the <code>predict()</code> function. Type <code>help(predict.glm)</code> for information on all arguments. We use: <code>predict(model.name, type = &quot;response&quot;)</code>. The first argument is the glm object (our model name) and the second specifies that we want predicted probabilities.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># predicted probabilities for all respondents</span>
+predicted.probabilities &lt;- predict(model1, type = <span class="hljs-string">&quot;response&quot;</span>)
+</code></pre>
+<p>Now that we have assigned probabilities to people turning out, we have to translate those into outcomes. Turnout is binary. A straightforward way, would be to say: We predict that all people with a predicted probability above 50% vote and all with predicted probabilities below or equal to 50% abstain. We specify this threshold below.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># threshold to translate predicted probabilities into outcomes</span>
+threshold &lt;- <span class="hljs-number">.5</span>
+</code></pre>
+<p>We create a new variable <code>expected.values</code> that is 1 if our predicted probability (<code>predicted.probabilites</code>) is larger than 0.5 and 0 otherwise. This is easily done with the <code>ifelse()</code> function. The syntax is as follows:</p>
+<p><code>ifelse( condition, what to do if condition is true, what to do if condition is false)</code></p>
+<pre><code class="lang-r"><span class="hljs-comment"># set prediction to 1 if predicted probability is larger than 0.5 and put 0 otherwise</span>
+expected.values &lt;- ifelse(predicted.probabilities &gt; threshold, yes = <span class="hljs-number">1</span>, no = <span class="hljs-number">0</span>)
+</code></pre>
+<p>All we have to do now is to compare our expected values of turnout against the actually observed values of turnout.</p>
+<p>We proceed by producing a table of predictions against actual outcomes. With that we will calculate the percentage of correctly predicted cases and compare that to the naive guess. We have the actually observed cases in our dependent variable (<code>Turnout</code>). The table is just a frequency table. The percentage of correctly predicted cases is simply the sum of correctly predicted cases over the number of cases.</p>
+<pre><code class="lang-r"> <span class="hljs-comment"># actually observed outcomes</span>
+observed &lt;- bes$Turnout
+
+<span class="hljs-comment"># putting observed outcomes and predicted outcomes into a table</span>
+outcome.table &lt;- table(observed,expected.values)
+outcome.table
+</code></pre>
+<pre><code>        expected.values
+observed    0    1
+       0  160  919
+       1  108 2974
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># correctly predicted cases:</span>
+<span class="hljs-comment"># (correct negatives + correct positives) / total number of outcomes</span>
+correctly.predicted &lt;- (outcome.table[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>] + outcome.table[<span class="hljs-number">2</span>,<span class="hljs-number">2</span>]) / sum(outcome.table)
+correctly.predicted
+</code></pre>
+<pre><code>[1] 0.7531843
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># comparing rate of correctly predicted to naive guess</span>
+mean(bes$Turnout)
+</code></pre>
+<pre><code>[1] 0.7406873
+</code></pre><p>You can see that our model outperforms the naive guess slightly. The more lopsided the distribution of your binary dependent variable, the harder it is to build a successful model.</p>
+<h3 id="joint-hypothesis-testing">Joint hypothesis testing</h3>
+<p>We add more explanatory variables to our model: <code>Influence</code> and <code>Age</code>. <code>Influence</code> corresponds to a theory we want to test while <code>Age</code> is a socio-economic control variable.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># esimate the new model 2 including Influence and Age</span>
+model2 &lt;- glm(Turnout ~ Income + polinfoindex + Influence + male + Age + 
+                edu15 + edu17 + edu18 + edu19plus + in_school + in_uni, 
+              family = binomial(link = <span class="hljs-string">&quot;logit&quot;</span>), data = bes)
+
+<span class="hljs-comment"># regression table comparing model 1 and model 2</span>
+screenreg( list(model1, model2) )
+</code></pre>
+<pre><code>==========================================
+                Model 1       Model 2     
+------------------------------------------
+(Intercept)        -1.14 ***     -3.90 ***
+                   (0.15)        (0.22)   
+Income              0.03          0.15 ***
+                   (0.02)        (0.02)   
+polinfoindex        0.38 ***      0.25 ***
+                   (0.02)        (0.02)   
+male               -0.35 ***     -0.36 ***
+                   (0.08)        (0.08)   
+edu15               0.38 ***     -0.34 ** 
+                   (0.10)        (0.11)   
+edu17               0.46 **       0.36 *  
+                   (0.15)        (0.16)   
+edu18               0.11          0.14    
+                   (0.14)        (0.15)   
+edu19plus           0.24 *        0.01    
+                   (0.12)        (0.13)   
+in_school           0.15          1.13 ** 
+                   (0.39)        (0.40)   
+in_uni             -0.72 **      -0.05    
+                   (0.25)        (0.27)   
+Influence                         0.21 ***
+                                 (0.02)   
+Age                               0.05 ***
+                                 (0.00)   
+------------------------------------------
+AIC              4401.20       4003.90    
+BIC              4464.53       4079.90    
+Log Likelihood  -2190.60      -1989.95    
+Deviance         4381.20       3979.90    
+Num. obs.        4161          4161       
+==========================================
+*** p &lt; 0.001, ** p &lt; 0.01, * p &lt; 0.05
+</code></pre><p>We will test if model 2 does better at predicting turnout than model 1. We use the likelihood ratio test. We use the <code>lmtest</code> package to test whether that difference is statistically significant using the <code>lrtest()</code> function. The syntax is the following:</p>
+<p><code>lrtest(model with less variables, model with more variables)</code></p>
+<pre><code class="lang-r"><span class="hljs-comment"># the likelihood ratio test</span>
+lrtest(model1, model2)
+</code></pre>
+<pre><code>Likelihood ratio test
+
+Model 1: Turnout ~ Income + polinfoindex + male + edu15 + edu17 + edu18 + 
+    edu19plus + in_school + in_uni
+Model 2: Turnout ~ Income + polinfoindex + Influence + male + Age + edu15 + 
+    edu17 + edu18 + edu19plus + in_school + in_uni
+  #Df  LogLik Df Chisq Pr(&gt;Chisq)    
+1  10 -2190.6                        
+2  12 -1990.0  2 401.3  &lt; 2.2e-16 ***
+---
+Signif. codes:  0 &apos;***&apos; 0.001 &apos;**&apos; 0.01 &apos;*&apos; 0.05 &apos;.&apos; 0.1 &apos; &apos; 1
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># Akaike&apos;s Information Criterion</span>
+AIC(model1, model2)
+</code></pre>
+<pre><code>       df      AIC
+model1 10 4401.200
+model2 12 4003.901
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># Bayesian Infromation Criterion</span>
+BIC(model1, model2)
+</code></pre>
+<pre><code>       df      BIC
+model1 10 4464.535
+model2 12 4079.903
+</code></pre><h3 id="substantial-interpretation">Substantial interpretation</h3>
+<p>Due to the functional form of the cumulative logistic function, the effect of a change in an independent variable depends on the level of the independent variable, i.e. they are not constant. Interpretation is nonetheless easily accomplished using Zelig. We pick meaningful scenarios and predict the probability that a person will vote based on the scenarios. First, we re-estimate model 2 using zelig.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># re-estimate model 2 using Zelig</span>
+z.m2 &lt;- zelig(Turnout ~ Income + polinfoindex + Influence + male + Age + edu15 + 
+                edu17 + edu18 + edu19plus + in_school + in_uni, model = <span class="hljs-string">&quot;logit&quot;</span>, 
+              data = bes, cite = <span class="hljs-literal">FALSE</span>)
+</code></pre>
+<p>What are meaningful scenarios? A meaningful scenario is a set of covariate values that corresponds to some case that is interesting in reality. For example, you may want to compare a women with 18 years of education to a man with 18 years of education while keeping all other variables at their means, medians or modes.</p>
+<p>We set binary variables to their modes, ordinally scaled variables to their medians and interval scaled variables to their means. By doing so for all variables except education and gender, we compare the average women with 18 years of education to the average man with 18 years of education.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># average man with 18 years of education</span>
+x.male.18edu &lt;- setx(z.m2, male = <span class="hljs-number">1</span>, edu18 = <span class="hljs-number">1</span>, Income = mean(bes$Income), 
+                     polinfoindex = mean(bes$polinfoindex), Influence = mean(bes$Influence),  
+                     Age = mean(bes$Age), edu15 = <span class="hljs-number">0</span>, edu17 = <span class="hljs-number">0</span>,  edu19plus = <span class="hljs-number">0</span>, 
+                     in_school = <span class="hljs-number">0</span>, in_uni = <span class="hljs-number">0</span>)
+
+<span class="hljs-comment"># check covariate values (if you have missings here, the simulation will not work)</span>
+t(x.male.18edu$values)
+</code></pre>
+<pre><code>     male edu18 Income   polinfoindex Influence Age      edu15 edu17
+[1,] 1    1     5.321557 5.409277     3.608508  50.91853 0     0    
+     edu19plus in_school in_uni
+[1,] 0         0         0     
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># average woman with 18 years of education</span>
+x.female.18edu &lt;- setx(z.m2, male = <span class="hljs-number">0</span>, edu18 = <span class="hljs-number">1</span>, Income = mean(bes$Income), 
+                       polinfoindex = mean(bes$polinfoindex), Influence = mean(bes$Influence),  
+                       Age = mean(bes$Age), edu15 = <span class="hljs-number">0</span>, edu17 = <span class="hljs-number">0</span>,  edu19plus = <span class="hljs-number">0</span>,
+                       in_school = <span class="hljs-number">0</span>, in_uni = <span class="hljs-number">0</span>)
+
+<span class="hljs-comment"># check covariate values (if you have missings here, the simulation will not work)</span>
+t(x.female.18edu$values)
+</code></pre>
+<pre><code>     male edu18 Income   polinfoindex Influence Age      edu15 edu17
+[1,] 0    1     5.321557 5.409277     3.608508  50.91853 0     0    
+     edu19plus in_school in_uni
+[1,] 0         0         0     
+</code></pre><p>Note: Do not worry about the <code>t()</code> around the covariate vectors. This simply transposes the vector so that it is printed horizontally instead of vertically.</p>
+<p>You see that the only difference between the covariate values in the two scenarios is gender. Therefore, we can compare a women and a man that are identical in all other attributes in our model. This is what keeping other variables constant means.</p>
+<p>Now all we have to do is simulate and compare the results.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># make simulation replicable, the values in set.seed() do not matter</span>
+set.seed(<span class="hljs-number">123</span>)
+
+<span class="hljs-comment"># simulate with our two scenarios</span>
+s.out &lt;- sim(z.m2, x = x.female.18edu, x1 = x.male.18edu)
+
+<span class="hljs-comment"># outcomes, check especially first differences</span>
+summary(s.out)
+</code></pre>
+<pre><code>Model:  logit 
+Number of simulations:  1000 
+
+Values of X
+  (Intercept)   Income polinfoindex Influence male      Age edu15 edu17
+1           1 5.321557     5.409277  3.608508    0 50.91853     0     0
+  edu18 edu19plus in_school in_uni
+1     1         0         0      0
+attr(,&quot;assign&quot;)
+ [1]  0  1  2  3  4  5  6  7  8  9 10 11
+
+Values of X1
+  (Intercept)   Income polinfoindex Influence male      Age edu15 edu17
+1           1 5.321557     5.409277  3.608508    1 50.91853     0     0
+  edu18 edu19plus in_school in_uni
+1     1         0         0      0
+attr(,&quot;assign&quot;)
+ [1]  0  1  2  3  4  5  6  7  8  9 10 11
+
+Expected Values: E(Y|X) 
+  mean    sd   50%  2.5% 97.5%
+ 0.838 0.019 0.838 0.795 0.873
+
+Expected Values: E(Y|X1) 
+  mean    sd   50% 2.5% 97.5%
+ 0.783 0.025 0.784 0.73 0.832
+
+Predicted Values: Y|X 
+     0     1
+ 0.162 0.838
+
+Predicted Values: Y|X1 
+     0     1
+ 0.217 0.783
+
+First Differences: E(Y|X1) - E(Y|X) 
+   mean    sd    50%   2.5%  97.5%
+ -0.054 0.014 -0.054 -0.082 -0.028
+</code></pre><pre><code class="lang-r">plot(s.out)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-28-1.png" alt=""></p>
+<p>Our next step will be to compare two groups like men and women while varying another continuous variable from lowest to highest. We use income here. So, we set a sequence for income, vary gender and keep every other variable constant at its appropriate measure of central tendency.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># women with income levels from lowest to highest (notice we put education to the mode)</span>
+x.fem &lt;- setx(z.m2, male = <span class="hljs-number">0</span>, Income = <span class="hljs-number">1</span>:<span class="hljs-number">13</span>, polinfoindex = mean(bes$polinfoindex), 
+              Influence = mean(bes$Influence), Age = mean(bes$Age), 
+              edu15 = <span class="hljs-number">1</span>, edu17 = <span class="hljs-number">0</span>, edu18 = <span class="hljs-number">0</span>, edu19plus = <span class="hljs-number">0</span>, in_school = <span class="hljs-number">0</span>, in_uni = <span class="hljs-number">0</span>)
+
+<span class="hljs-comment"># men with income levels from lowest to highest (notice we put education to the mode)</span>
+x.mal &lt;- setx(z.m2, male = <span class="hljs-number">1</span>, Income = <span class="hljs-number">1</span>:<span class="hljs-number">13</span>, polinfoindex = mean(bes$polinfoindex), 
+              Influence = mean(bes$Influence), Age = mean(bes$Age), 
+              edu15 = <span class="hljs-number">1</span>, edu17 = <span class="hljs-number">0</span>, edu18 = <span class="hljs-number">0</span>, edu19plus = <span class="hljs-number">0</span>, in_school = <span class="hljs-number">0</span>, in_uni = <span class="hljs-number">0</span>)
+</code></pre>
+<p>If you want to check the values we have set again this would work slightly different this time because we have set <code>Income</code> to a sequence. You will see the values that you have set if you type <code>names(x.fem)</code> and <code>names(x.mal</code>).</p>
+<pre><code class="lang-r"><span class="hljs-comment"># simulation</span>
+s.out2 &lt;- sim(z.m2, x = x.fem, x1 = x.mal)
+</code></pre>
+<p>We will illustrate our results. The plot function here is slightly different as well. You use <code>plot.ci()</code> instead of the usual <code>plot()</code> function.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># final plot</span>
+plot.ci (s.out2, 
+         ci = <span class="hljs-number">95</span>,
+         xlab = <span class="hljs-string">&quot;income&quot;</span>, 
+         ylab = <span class="hljs-string">&quot;predicted probability of Voting&quot;</span>,
+         main = <span class="hljs-string">&quot;effect of income by gender&quot;</span>)
+
+<span class="hljs-comment"># add labels manually</span>
+text( x = <span class="hljs-number">2</span>, y = <span class="hljs-number">.75</span>, labels = <span class="hljs-string">&quot;women&quot;</span> )
+text( x = <span class="hljs-number">7</span>, y = <span class="hljs-number">.68</span>, labels = <span class="hljs-string">&quot;men&quot;</span> )
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-31-1.png" alt=""></p>
+<h2 id="bonus-maps">BONUS: Maps</h2>
+<p>Let&apos;s play with some maps. How about if I show you the location of my favourite coffee shops?</p>
+<pre><code class="lang-r">install.packages(<span class="hljs-string">&quot;devtools&quot;</span>)
+install.packages(<span class="hljs-string">&quot;ggmap&quot;</span>)
+install.packages(<span class="hljs-string">&quot;leafletR&quot;</span>)
+</code></pre>
+<pre><code class="lang-r"><span class="hljs-keyword">library</span>(ggmap)
+devtools::install_github(<span class="hljs-string">&quot;dill/emoGG&quot;</span>)
+</code></pre>
+<pre><code>Downloading github repo dill/emoGG@master
+Installing emoGG
+&apos;/Library/Frameworks/R.framework/Resources/bin/R&apos; --no-site-file  \
+  --no-environ --no-save --no-restore CMD INSTALL  \
+  &apos;/private/var/folders/fm/59csfz2j6xggcgg45nz0kgwr0000gn/T/Rtmpzs5vvV/devtools27f18fd3af8/dill-emoGG-f2436e5&apos;  \
+  --library=&apos;/Users/javier/Library/R/3.2/library&apos; --install-tests 
+</code></pre><pre><code class="lang-r"><span class="hljs-keyword">library</span>(emoGG)
+
+sppmap &lt;- qmap(<span class="hljs-string">&quot;WC1H 9QU&quot;</span>, zoom = <span class="hljs-number">16</span>, maptype=<span class="hljs-string">&quot;hybrid&quot;</span>)
+</code></pre>
+<pre><code>Map from URL : http://maps.googleapis.com/maps/api/staticmap?center=WC1H+9QU&amp;zoom=16&amp;size=640x640&amp;scale=2&amp;maptype=hybrid&amp;language=en-EN&amp;sensor=false
+Information from URL : http://maps.googleapis.com/maps/api/geocode/json?address=WC1H%209QU&amp;sensor=false
+</code></pre><pre><code class="lang-r">coffee_shops &lt;- data.frame(lat=c(<span class="hljs-number">51.526259</span>,<span class="hljs-number">51.523253</span>, <span class="hljs-number">51.525874</span>, <span class="hljs-number">51.525748</span>, <span class="hljs-number">51.5243248</span>, <span class="hljs-number">51.525302</span>),
+                           lon=c(-<span class="hljs-number">0.129560</span>,-<span class="hljs-number">0.131100</span>, -<span class="hljs-number">0.125719</span>, -<span class="hljs-number">0.125088</span>, -<span class="hljs-number">0.124673</span>, -<span class="hljs-number">0.126386</span>),
+                           name=c(<span class="hljs-string">&quot;Fleet River&quot;</span>, <span class="hljs-string">&quot;Lever &amp; Bloom&quot;</span>, <span class="hljs-string">&quot;Fork&quot;</span>, <span class="hljs-string">&quot;Continental Stores&quot;</span>, <span class="hljs-string">&quot;Petit A&quot;</span>, <span class="hljs-string">&quot;Bloomsbury Coffee House&quot;</span>))
+sppmap + geom_point(data=coffee_shops, aes(x=coffee_shops$lon, y=coffee_shops$lat, colour=name), size=<span class="hljs-number">3</span>)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-33-1.png" alt=""></p>
+<pre><code class="lang-r"><span class="hljs-comment">## We can also use emojis!!</span>
+
+sppmap + geom_emoji(data=coffee_shops, aes(x=coffee_shops$lon, y=coffee_shops$lat, colour=name), emoji=<span class="hljs-string">&quot;2615&quot;</span>)
+</code></pre>
+<p><img src="seminar_files/figure-markdown_github+backtick_code_blocks+autolink_bare_uris/unnamed-chunk-33-2.png" alt=""> With the following code you can plot an interactive map</p>
+<pre><code class="lang-r"><span class="hljs-keyword">library</span>(leafletR)
+
+q.dat &lt;- toGeoJSON(data = coffee_shops, dest=tempdir(), name=<span class="hljs-string">&quot;coffee&quot;</span>)
+q.style &lt;- styleSingle(col=<span class="hljs-number">2</span>, lwd=<span class="hljs-number">1</span>, alpha=<span class="hljs-number">1</span>)
+q.map &lt;- leaflet(data = q.dat, base.map = <span class="hljs-string">&quot;tls&quot;</span>, popup = <span class="hljs-string">&quot;name&quot;</span>, dest=tempdir(), controls=c(<span class="hljs-string">&quot;all&quot;</span>), incl.data = <span class="hljs-literal">TRUE</span>, title = <span class="hljs-string">&quot;Javier&apos;s favourite coffee shops&quot;</span>, style=q.style, size = c(<span class="hljs-number">500</span>,<span class="hljs-number">500</span>))
+q.map
+</code></pre>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../week2/index.html" class="navigation navigation-prev " aria-label="Previous page: Panel data models, logit, further data manipulation and visualisation"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../optional/index.html" class="navigation navigation-next " aria-label="Next page: Optional Material"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
